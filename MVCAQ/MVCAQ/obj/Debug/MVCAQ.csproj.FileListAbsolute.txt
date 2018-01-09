@@ -1,0 +1,103 @@
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\MVCAQ.dll.config
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\MVCAQ.dll
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\MVCAQ.pdb
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\Antlr3.Runtime.dll
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\Newtonsoft.Json.dll
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\System.Web.Helpers.dll
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\System.Web.Mvc.dll
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\System.Web.Optimization.dll
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\System.Web.Razor.dll
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\System.Web.WebPages.dll
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\System.Web.WebPages.Razor.dll
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\WebGrease.dll
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\System.Web.Helpers.xml
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\System.Web.Mvc.xml
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\System.Web.Optimization.xml
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\System.Web.Razor.xml
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\System.Web.WebPages.xml
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\System.Web.WebPages.Razor.xml
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\Newtonsoft.Json.xml
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\bin\Antlr3.Runtime.pdb
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\obj\Debug\MVCAQ.dll
+C:\Users\Sema\Desktop\SORU VE CEVAP\MVCAQ\MVCAQ\obj\Debug\MVCAQ.pdb
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\obj\Debug\MVCAQ.dll
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\MVCAQ.dll.config
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\MVCAQ.dll
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\MVCAQ.pdb
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\Antlr3.Runtime.dll
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\Newtonsoft.Json.dll
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\System.Web.Helpers.dll
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\System.Web.Mvc.dll
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\System.Web.Optimization.dll
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\System.Web.Razor.dll
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\System.Web.WebPages.dll
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\System.Web.WebPages.Razor.dll
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\WebGrease.dll
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\System.Web.Helpers.xml
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\System.Web.Mvc.xml
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\System.Web.Optimization.xml
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\System.Web.Razor.xml
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\System.Web.WebPages.xml
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\System.Web.WebPages.Razor.xml
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\Newtonsoft.Json.xml
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\bin\Antlr3.Runtime.pdb
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\obj\Debug\MVCAQ.pdb
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\MVCAQ\MVCAQ\obj\Debug\MVCAQ.csprojResolveAssemblyReference.cache
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\MVCAQ.dll.config
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\MVCAQ.dll
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\MVCAQ.pdb
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\Antlr3.Runtime.dll
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\Newtonsoft.Json.dll
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\System.Web.Helpers.dll
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\System.Web.Mvc.dll
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\System.Web.Optimization.dll
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\System.Web.Razor.dll
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\System.Web.WebPages.dll
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\System.Web.WebPages.Razor.dll
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\WebGrease.dll
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\System.Web.Helpers.xml
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\System.Web.Mvc.xml
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\System.Web.Optimization.xml
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\System.Web.Razor.xml
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\System.Web.WebPages.xml
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\System.Web.WebPages.Razor.xml
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\Newtonsoft.Json.xml
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\bin\Antlr3.Runtime.pdb
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\obj\Debug\MVCAQ.csprojResolveAssemblyReference.cache
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\obj\Debug\MVCAQ.dll
+C:\Users\Sema\Desktop\SOA__SMB\MVCAQ\MVCAQ\obj\Debug\MVCAQ.pdb
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\MVCAQ.dll.config
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\MVCAQ.dll
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\MVCAQ.pdb
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\Antlr3.Runtime.dll
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\Newtonsoft.Json.dll
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\System.Web.Helpers.dll
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\System.Web.Mvc.dll
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\System.Web.Optimization.dll
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\System.Web.Razor.dll
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\System.Web.WebPages.dll
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\System.Web.WebPages.Razor.dll
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\WebGrease.dll
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\System.Web.Helpers.xml
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\System.Web.Mvc.xml
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\System.Web.Optimization.xml
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\System.Web.Razor.xml
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\System.Web.WebPages.xml
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\System.Web.WebPages.Razor.xml
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\Newtonsoft.Json.xml
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\bin\Antlr3.Runtime.pdb
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\obj\Debug\MVCAQ.csprojResolveAssemblyReference.cache
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\obj\Debug\MVCAQ.dll
+C:\Users\Beritan Karali\Desktop\Dersler\3.sınıf 1.dönem\Projeler\SoaAnswerQuestion\MVCAQ\MVCAQ\obj\Debug\MVCAQ.pdb

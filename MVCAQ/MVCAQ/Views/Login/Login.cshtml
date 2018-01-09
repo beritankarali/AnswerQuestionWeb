@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2>
+
+<script>
+    $(function () {
+        $("#girisyap").click(function () {
+            console.log("asasasasas");
+            var eposta = $("#eposta").val();
+            var parola = $("#parola").val();
+            $.post("../Login/GirisYap", { eposta: eposta, parola: parola }, function (data) {
+                if (data.basari != -1) {
+                    location.href = "../Home/Index"
+                }
+                else {
+                    alert("Giriş Başarısız!");
+                }
+            });
+        });
+    });
+</script>

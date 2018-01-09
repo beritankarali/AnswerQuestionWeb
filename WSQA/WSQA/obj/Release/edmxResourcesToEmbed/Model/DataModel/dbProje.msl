@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="stajprojeModelStoreContainer" CdmEntityContainer="dbStajProjeEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="stajprojeModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCategory">
+      <EntityTypeMapping TypeName="stajprojeModel.tblCategory">
+        <MappingFragment StoreEntitySet="tblCategory">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="ParentCategoryID" ColumnName="ParentCategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCompanies">
+      <EntityTypeMapping TypeName="stajprojeModel.tblCompanies">
+        <MappingFragment StoreEntitySet="tblCompanies">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CompanyDate" ColumnName="CompanyDate" />
+          <ScalarProperty Name="CompanyAbout" ColumnName="CompanyAbout" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblConferenceCourses">
+      <EntityTypeMapping TypeName="stajprojeModel.tblConferenceCourses">
+        <MappingFragment StoreEntitySet="tblConferenceCourses">
+          <ScalarProperty Name="ConferenceCoursID" ColumnName="ConferenceCoursID" />
+          <ScalarProperty Name="ConferenceCoursName" ColumnName="ConferenceCoursName" />
+          <ScalarProperty Name="ConferenceCoursDate" ColumnName="ConferenceCoursDate" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCountries">
+      <EntityTypeMapping TypeName="stajprojeModel.tblCountries">
+        <MappingFragment StoreEntitySet="tblCountries">
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CountryName" ColumnName="CountryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCourseComment">
+      <EntityTypeMapping TypeName="stajprojeModel.tblCourseComment">
+        <MappingFragment StoreEntitySet="tblCourseComment">
+          <ScalarProperty Name="CourseCommentID" ColumnName="CourseCommentID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CommentContent" ColumnName="CommentContent" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="CourseCommentStatusID" ColumnName="CourseCommentStatusID" />
+          <ScalarProperty Name="AnsweredCommentID" ColumnName="AnsweredCommentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCourseCommentStatus">
+      <EntityTypeMapping TypeName="stajprojeModel.tblCourseCommentStatus">
+        <MappingFragment StoreEntitySet="tblCourseCommentStatus">
+          <ScalarProperty Name="CourseCommentStatusID" ColumnName="CourseCommentStatusID" />
+          <ScalarProperty Name="CourseCommentStatusName" ColumnName="CourseCommentStatusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCourseKeyword">
+      <EntityTypeMapping TypeName="stajprojeModel.tblCourseKeyword">
+        <MappingFragment StoreEntitySet="tblCourseKeyword">
+          <ScalarProperty Name="CourseKeywordID" ColumnName="CourseKeywordID" />
+          <ScalarProperty Name="CourseKeyword" ColumnName="CourseKeyword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCourseKeywords">
+      <EntityTypeMapping TypeName="stajprojeModel.tblCourseKeywords">
+        <MappingFragment StoreEntitySet="tblCourseKeywords">
+          <ScalarProperty Name="CourseKeywordsID" ColumnName="CourseKeywordsID" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="CourseKeywordID" ColumnName="CourseKeywordID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCourseLevel">
+      <EntityTypeMapping TypeName="stajprojeModel.tblCourseLevel">
+        <MappingFragment StoreEntitySet="tblCourseLevel">
+          <ScalarProperty Name="CourseLevelID" ColumnName="CourseLevelID" />
+          <ScalarProperty Name="CourseLevel" ColumnName="CourseLevel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCourseRate">
+      <EntityTypeMapping TypeName="stajprojeModel.tblCourseRate">
+        <MappingFragment StoreEntitySet="tblCourseRate">
+          <ScalarProperty Name="CourseRateID" ColumnName="CourseRateID" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="RatedDate" ColumnName="RatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCourses">
+      <EntityTypeMapping TypeName="stajprojeModel.tblCourses">
+        <MappingFragment StoreEntitySet="tblCourses">
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CourseLevelID" ColumnName="CourseLevelID" />
+          <ScalarProperty Name="CourseStatusID" ColumnName="CourseStatusID" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="YoutubeURL" ColumnName="YoutubeURL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCourseStatus">
+      <EntityTypeMapping TypeName="stajprojeModel.tblCourseStatus">
+        <MappingFragment StoreEntitySet="tblCourseStatus">
+          <ScalarProperty Name="CourseStatusID" ColumnName="CourseStatusID" />
+          <ScalarProperty Name="CourseStatus" ColumnName="CourseStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDepartments">
+      <EntityTypeMapping TypeName="stajprojeModel.tblDepartments">
+        <MappingFragment StoreEntitySet="tblDepartments">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDisabledStatus">
+      <EntityTypeMapping TypeName="stajprojeModel.tblDisabledStatus">
+        <MappingFragment StoreEntitySet="tblDisabledStatus">
+          <ScalarProperty Name="DisabledID" ColumnName="DisabledID" />
+          <ScalarProperty Name="DisabledName" ColumnName="DisabledName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDistricts">
+      <EntityTypeMapping TypeName="stajprojeModel.tblDistricts">
+        <MappingFragment StoreEntitySet="tblDistricts">
+          <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+          <ScalarProperty Name="DistrictName" ColumnName="DistrictName" />
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFaculties">
+      <EntityTypeMapping TypeName="stajprojeModel.tblFaculties">
+        <MappingFragment StoreEntitySet="tblFaculties">
+          <ScalarProperty Name="FacultyID" ColumnName="FacultyID" />
+          <ScalarProperty Name="FacultyName" ColumnName="FacultyName" />
+          <ScalarProperty Name="UniversityID" ColumnName="UniversityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFollowing">
+      <EntityTypeMapping TypeName="stajprojeModel.tblFollowing">
+        <MappingFragment StoreEntitySet="tblFollowing">
+          <ScalarProperty Name="FollowingID" ColumnName="FollowingID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FollowingUserID" ColumnName="FollowingUserID" />
+          <ScalarProperty Name="FollowDate" ColumnName="FollowDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFollowRequest">
+      <EntityTypeMapping TypeName="stajprojeModel.tblFollowRequest">
+        <MappingFragment StoreEntitySet="tblFollowRequest">
+          <ScalarProperty Name="FollowRequestID" ColumnName="FollowRequestID" />
+          <ScalarProperty Name="FollowDate" ColumnName="FollowDate" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FollowID" ColumnName="FollowID" />
+          <ScalarProperty Name="FollowApproval" ColumnName="FollowApproval" />
+          <ScalarProperty Name="FollowRequestSeen" ColumnName="FollowRequestSeen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblForeignLanguages">
+      <EntityTypeMapping TypeName="stajprojeModel.tblForeignLanguages">
+        <MappingFragment StoreEntitySet="tblForeignLanguages">
+          <ScalarProperty Name="ForeignLanguageID" ColumnName="ForeignLanguageID" />
+          <ScalarProperty Name="ForeignLanguageName" ColumnName="ForeignLanguageName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblHobbies">
+      <EntityTypeMapping TypeName="stajprojeModel.tblHobbies">
+        <MappingFragment StoreEntitySet="tblHobbies">
+          <ScalarProperty Name="HobbyID" ColumnName="HobbyID" />
+          <ScalarProperty Name="HobbyName" ColumnName="HobbyName" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblInterView">
+      <EntityTypeMapping TypeName="stajprojeModel.tblInterView">
+        <MappingFragment StoreEntitySet="tblInterView">
+          <ScalarProperty Name="InterviewID" ColumnName="InterviewID" />
+          <ScalarProperty Name="InterviewQues" ColumnName="InterviewQues" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblInterViewAnswers">
+      <EntityTypeMapping TypeName="stajprojeModel.tblInterViewAnswers">
+        <MappingFragment StoreEntitySet="tblInterViewAnswers">
+          <ScalarProperty Name="InterViewAnswersID" ColumnName="InterViewAnswersID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="InterViewAnswers" ColumnName="InterViewAnswers" />
+          <ScalarProperty Name="InterviewID" ColumnName="InterviewID" />
+          <ScalarProperty Name="QuesAnswersStart" ColumnName="QuesAnswersStart" />
+          <ScalarProperty Name="QuesAnswersFinish" ColumnName="QuesAnswersFinish" />
+          <ScalarProperty Name="InterviweFileExtends" ColumnName="InterviweFileExtends" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJobApplications">
+      <EntityTypeMapping TypeName="stajprojeModel.tblJobApplications">
+        <MappingFragment StoreEntitySet="tblJobApplications">
+          <ScalarProperty Name="JobApplicationsID" ColumnName="JobApplicationsID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="ApplicationText" ColumnName="ApplicationText" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJobOperationType">
+      <EntityTypeMapping TypeName="stajprojeModel.tblJobOperationType">
+        <MappingFragment StoreEntitySet="tblJobOperationType">
+          <ScalarProperty Name="JobOperationTypeID" ColumnName="JobOperationTypeID" />
+          <ScalarProperty Name="OperationTypeID" ColumnName="OperationTypeID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJobs">
+      <EntityTypeMapping TypeName="stajprojeModel.tblJobs">
+        <MappingFragment StoreEntitySet="tblJobs">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="WorksPositionID" ColumnName="WorksPositionID" />
+          <ScalarProperty Name="SectorID" ColumnName="SectorID" />
+          <ScalarProperty Name="QualificationsText" ColumnName="QualificationsText" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+          <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+          <ScalarProperty Name="JobStartDate" ColumnName="JobStartDate" />
+          <ScalarProperty Name="JobStatu" ColumnName="JobStatu" />
+          <ScalarProperty Name="PersonelNumber" ColumnName="PersonelNumber" />
+          <ScalarProperty Name="JobFinishDate" ColumnName="JobFinishDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJobsDepartment">
+      <EntityTypeMapping TypeName="stajprojeModel.tblJobsDepartment">
+        <MappingFragment StoreEntitySet="tblJobsDepartment">
+          <ScalarProperty Name="JobsDepartment" ColumnName="JobsDepartment" />
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJobsDisabled">
+      <EntityTypeMapping TypeName="stajprojeModel.tblJobsDisabled">
+        <MappingFragment StoreEntitySet="tblJobsDisabled">
+          <ScalarProperty Name="JobsDisabledID" ColumnName="JobsDisabledID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="DisabledID" ColumnName="DisabledID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJobsEducationLevel">
+      <EntityTypeMapping TypeName="stajprojeModel.tblJobsEducationLevel">
+        <MappingFragment StoreEntitySet="tblJobsEducationLevel">
+          <ScalarProperty Name="JobsEducationLevelID" ColumnName="JobsEducationLevelID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="EducationTypeID" ColumnName="EducationTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblJobsSkils">
+      <EntityTypeMapping TypeName="stajprojeModel.tblJobsSkils">
+        <MappingFragment StoreEntitySet="tblJobsSkils">
+          <ScalarProperty Name="JobskilsID" ColumnName="JobskilsID" />
+          <ScalarProperty Name="SkilsDetailsID" ColumnName="SkilsDetailsID" />
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLesson">
+      <EntityTypeMapping TypeName="stajprojeModel.tblLesson">
+        <MappingFragment StoreEntitySet="tblLesson">
+          <ScalarProperty Name="LessonID" ColumnName="LessonID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="VideoDuration" ColumnName="VideoDuration" />
+          <ScalarProperty Name="VideoLink" ColumnName="VideoLink" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblMessages">
+      <EntityTypeMapping TypeName="stajprojeModel.tblMessages">
+        <MappingFragment StoreEntitySet="tblMessages">
+          <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+          <ScalarProperty Name="MessagePostID" ColumnName="MessagePostID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="MessageText" ColumnName="MessageText" />
+          <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+          <ScalarProperty Name="Seen" ColumnName="Seen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblNotifications">
+      <EntityTypeMapping TypeName="stajprojeModel.tblNotifications">
+        <MappingFragment StoreEntitySet="tblNotifications">
+          <ScalarProperty Name="NotificationID" ColumnName="NotificationID" />
+          <ScalarProperty Name="NotificationDate" ColumnName="NotificationDate" />
+          <ScalarProperty Name="NotificationSeen" ColumnName="NotificationSeen" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SharesCommentID" ColumnName="SharesCommentID" />
+          <ScalarProperty Name="SharesLikeID" ColumnName="SharesLikeID" />
+          <ScalarProperty Name="QuestionLikeAndDislikeID" ColumnName="QuestionLikeAndDislikeID" />
+          <ScalarProperty Name="QuestionAnserwsID" ColumnName="QuestionAnserwsID" />
+          <ScalarProperty Name="QuestionAnwersAndDislikeID" ColumnName="QuestionAnwersAndDislikeID" />
+          <ScalarProperty Name="FollowRequestID" ColumnName="FollowRequestID" />
+          <ScalarProperty Name="FollowingID" ColumnName="FollowingID" />
+          <ScalarProperty Name="SkillsValidationID" ColumnName="SkillsValidationID" />
+          <ScalarProperty Name="ProjectApplicationID" ColumnName="ProjectApplicationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOldProject">
+      <EntityTypeMapping TypeName="stajprojeModel.tblOldProject">
+        <MappingFragment StoreEntitySet="tblOldProject">
+          <ScalarProperty Name="OldProjectID" ColumnName="OldProjectID" />
+          <ScalarProperty Name="OldProjectName" ColumnName="OldProjectName" />
+          <ScalarProperty Name="UsersID" ColumnName="UsersID" />
+          <ScalarProperty Name="OldProjectDesc" ColumnName="OldProjectDesc" />
+          <ScalarProperty Name="Teknolojis" ColumnName="Teknolojis" />
+          <ScalarProperty Name="WorksID" ColumnName="WorksID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblOperationType">
+      <EntityTypeMapping TypeName="stajprojeModel.tblOperationType">
+        <MappingFragment StoreEntitySet="tblOperationType">
+          <ScalarProperty Name="OperationTypeID" ColumnName="OperationTypeID" />
+          <ScalarProperty Name="OperationTypeName" ColumnName="OperationTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPersonelEducation">
+      <EntityTypeMapping TypeName="stajprojeModel.tblPersonelEducation">
+        <MappingFragment StoreEntitySet="tblPersonelEducation">
+          <ScalarProperty Name="PersonelEducationID" ColumnName="PersonelEducationID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="PersonelEducationTypeID" ColumnName="PersonelEducationTypeID" />
+          <ScalarProperty Name="SectionID" ColumnName="SectionID" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPersonelEducationType">
+      <EntityTypeMapping TypeName="stajprojeModel.tblPersonelEducationType">
+        <MappingFragment StoreEntitySet="tblPersonelEducationType">
+          <ScalarProperty Name="PersonelEducationTypeID" ColumnName="PersonelEducationTypeID" />
+          <ScalarProperty Name="PersonelEducationTypeName" ColumnName="PersonelEducationTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProfiles">
+      <EntityTypeMapping TypeName="stajprojeModel.tblProfiles">
+        <MappingFragment StoreEntitySet="tblProfiles">
+          <ScalarProperty Name="ProfileID" ColumnName="ProfileID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Birtdate" ColumnName="Birtdate" />
+          <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
+          <ScalarProperty Name="AboutMe" ColumnName="AboutMe" />
+          <ScalarProperty Name="DisabledID" ColumnName="DisabledID" />
+          <ScalarProperty Name="DisabledValue" ColumnName="DisabledValue" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="ChatStatus" ColumnName="ChatStatus" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="ProfilePrivacy" ColumnName="ProfilePrivacy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProjectAds">
+      <EntityTypeMapping TypeName="stajprojeModel.tblProjectAds">
+        <MappingFragment StoreEntitySet="tblProjectAds">
+          <ScalarProperty Name="ProjectAwardID" ColumnName="ProjectAwardID" />
+          <ScalarProperty Name="ProjectSenderID" ColumnName="ProjectSenderID" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="ProjectAbout" ColumnName="ProjectAbout" />
+          <ScalarProperty Name="ProjectDate" ColumnName="ProjectDate" />
+          <ScalarProperty Name="ProjectState" ColumnName="ProjectState" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProjectApplications">
+      <EntityTypeMapping TypeName="stajprojeModel.tblProjectApplications">
+        <MappingFragment StoreEntitySet="tblProjectApplications">
+          <ScalarProperty Name="ProjectApplicationID" ColumnName="ProjectApplicationID" />
+          <ScalarProperty Name="ProjectApplicationDate" ColumnName="ProjectApplicationDate" />
+          <ScalarProperty Name="MinMoney" ColumnName="MinMoney" />
+          <ScalarProperty Name="MaxMoney" ColumnName="MaxMoney" />
+          <ScalarProperty Name="ProjectAwardID" ColumnName="ProjectAwardID" />
+          <ScalarProperty Name="Projectstatus" ColumnName="Projectstatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProvinces">
+      <EntityTypeMapping TypeName="stajprojeModel.tblProvinces">
+        <MappingFragment StoreEntitySet="tblProvinces">
+          <ScalarProperty Name="ProvinceID" ColumnName="ProvinceID" />
+          <ScalarProperty Name="ProvinceName" ColumnName="ProvinceName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblQuestionAnswers">
+      <EntityTypeMapping TypeName="stajprojeModel.tblQuestionAnswers">
+        <MappingFragment StoreEntitySet="tblQuestionAnswers">
+          <ScalarProperty Name="QuestionAnserwsID" ColumnName="QuestionAnserwsID" />
+          <ScalarProperty Name="AnswerText" ColumnName="AnswerText" />
+          <ScalarProperty Name="AnswerUserID" ColumnName="AnswerUserID" />
+          <ScalarProperty Name="Accuracy" ColumnName="Accuracy" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblQuestionAnwersAndDislike">
+      <EntityTypeMapping TypeName="stajprojeModel.tblQuestionAnwersAndDislike">
+        <MappingFragment StoreEntitySet="tblQuestionAnwersAndDislike">
+          <ScalarProperty Name="QuestionAnwersAndDislikeID" ColumnName="QuestionAnwersAndDislikeID" />
+          <ScalarProperty Name="QuestionAnserwsID" ColumnName="QuestionAnserwsID" />
+          <ScalarProperty Name="UsersID" ColumnName="UsersID" />
+          <ScalarProperty Name="QuestionAnserwsLike" ColumnName="QuestionAnserwsLike" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblQuestionAreaType">
+      <EntityTypeMapping TypeName="stajprojeModel.tblQuestionAreaType">
+        <MappingFragment StoreEntitySet="tblQuestionAreaType">
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+          <ScalarProperty Name="AreaID" ColumnName="AreaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblQuestionLikeAndDislike">
+      <EntityTypeMapping TypeName="stajprojeModel.tblQuestionLikeAndDislike">
+        <MappingFragment StoreEntitySet="tblQuestionLikeAndDislike">
+          <ScalarProperty Name="QuestionLikeAndDislikeID" ColumnName="QuestionLikeAndDislikeID" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="QuestionLike" ColumnName="QuestionLike" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblQuestions">
+      <EntityTypeMapping TypeName="stajprojeModel.tblQuestions">
+        <MappingFragment StoreEntitySet="tblQuestions">
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="QuestionTitle" ColumnName="QuestionTitle" />
+          <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+          <ScalarProperty Name="QuestionImage" ColumnName="QuestionImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblQuestionsAreas">
+      <EntityTypeMapping TypeName="stajprojeModel.tblQuestionsAreas">
+        <MappingFragment StoreEntitySet="tblQuestionsAreas">
+          <ScalarProperty Name="OuestionAreaID" ColumnName="OuestionAreaID" />
+          <ScalarProperty Name="OuestionAreaName" ColumnName="OuestionAreaName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblReferences">
+      <EntityTypeMapping TypeName="stajprojeModel.tblReferences">
+        <MappingFragment StoreEntitySet="tblReferences">
+          <ScalarProperty Name="ReferenceID" ColumnName="ReferenceID" />
+          <ScalarProperty Name="ReferenceName" ColumnName="ReferenceName" />
+          <ScalarProperty Name="ReferenceEmail" ColumnName="ReferenceEmail" />
+          <ScalarProperty Name="ReferenceNumber" ColumnName="ReferenceNumber" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSections">
+      <EntityTypeMapping TypeName="stajprojeModel.tblSections">
+        <MappingFragment StoreEntitySet="tblSections">
+          <ScalarProperty Name="SectionID" ColumnName="SectionID" />
+          <ScalarProperty Name="SectionName" ColumnName="SectionName" />
+          <ScalarProperty Name="FacultyID" ColumnName="FacultyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSectors">
+      <EntityTypeMapping TypeName="stajprojeModel.tblSectors">
+        <MappingFragment StoreEntitySet="tblSectors">
+          <ScalarProperty Name="SectorID" ColumnName="SectorID" />
+          <ScalarProperty Name="SectorName" ColumnName="SectorName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblShares">
+      <EntityTypeMapping TypeName="stajprojeModel.tblShares">
+        <MappingFragment StoreEntitySet="tblShares">
+          <ScalarProperty Name="SharingID" ColumnName="SharingID" />
+          <ScalarProperty Name="SharingText" ColumnName="SharingText" />
+          <ScalarProperty Name="SharingDate" ColumnName="SharingDate" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SharingImages" ColumnName="SharingImages" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSharesComment">
+      <EntityTypeMapping TypeName="stajprojeModel.tblSharesComment">
+        <MappingFragment StoreEntitySet="tblSharesComment">
+          <ScalarProperty Name="SharesCommentID" ColumnName="SharesCommentID" />
+          <ScalarProperty Name="SharesCommentDate" ColumnName="SharesCommentDate" />
+          <ScalarProperty Name="SharesCommentUsersID" ColumnName="SharesCommentUsersID" />
+          <ScalarProperty Name="SharesCommentText" ColumnName="SharesCommentText" />
+          <ScalarProperty Name="SharingID" ColumnName="SharingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSharesLike">
+      <EntityTypeMapping TypeName="stajprojeModel.tblSharesLike">
+        <MappingFragment StoreEntitySet="tblSharesLike">
+          <ScalarProperty Name="SharesLikeID" ColumnName="SharesLikeID" />
+          <ScalarProperty Name="SharesLikeDate" ColumnName="SharesLikeDate" />
+          <ScalarProperty Name="SharesLikeUserID" ColumnName="SharesLikeUserID" />
+          <ScalarProperty Name="SharingID" ColumnName="SharingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSkills">
+      <EntityTypeMapping TypeName="stajprojeModel.tblSkills">
+        <MappingFragment StoreEntitySet="tblSkills">
+          <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+          <ScalarProperty Name="SkillsName" ColumnName="SkillsName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSkillsValidation">
+      <EntityTypeMapping TypeName="stajprojeModel.tblSkillsValidation">
+        <MappingFragment StoreEntitySet="tblSkillsValidation">
+          <ScalarProperty Name="SkillsValidationID" ColumnName="SkillsValidationID" />
+          <ScalarProperty Name="UserSkillsID" ColumnName="UserSkillsID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSkilsDetails">
+      <EntityTypeMapping TypeName="stajprojeModel.tblSkilsDetails">
+        <MappingFragment StoreEntitySet="tblSkilsDetails">
+          <ScalarProperty Name="SkilsDetailsID" ColumnName="SkilsDetailsID" />
+          <ScalarProperty Name="SkilsDetailsName" ColumnName="SkilsDetailsName" />
+          <ScalarProperty Name="SkillID" ColumnName="SkillID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTags">
+      <EntityTypeMapping TypeName="stajprojeModel.tblTags">
+        <MappingFragment StoreEntitySet="tblTags">
+          <ScalarProperty Name="TagID" ColumnName="TagID" />
+          <ScalarProperty Name="TagName" ColumnName="TagName" />
+          <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+          <ScalarProperty Name="SharingID" ColumnName="SharingID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUniversities">
+      <EntityTypeMapping TypeName="stajprojeModel.tblUniversities">
+        <MappingFragment StoreEntitySet="tblUniversities">
+          <ScalarProperty Name="UniversityID" ColumnName="UniversityID" />
+          <ScalarProperty Name="UniversityName" ColumnName="UniversityName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserLanguages">
+      <EntityTypeMapping TypeName="stajprojeModel.tblUserLanguages">
+        <MappingFragment StoreEntitySet="tblUserLanguages">
+          <ScalarProperty Name="UserLanguageID" ColumnName="UserLanguageID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserLanguageLevel" ColumnName="UserLanguageLevel" />
+          <ScalarProperty Name="ForeignLanguageID" ColumnName="ForeignLanguageID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="stajprojeModel.tblUsers">
+        <MappingFragment StoreEntitySet="tblUsers">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserSurname" ColumnName="UserSurname" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="TelNumber" ColumnName="TelNumber" />
+          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsersCourses">
+      <EntityTypeMapping TypeName="stajprojeModel.tblUsersCourses">
+        <MappingFragment StoreEntitySet="tblUsersCourses">
+          <ScalarProperty Name="UserCoursesID" ColumnName="UserCoursesID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+          <ScalarProperty Name="BoughtDate" ColumnName="BoughtDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserSkills">
+      <EntityTypeMapping TypeName="stajprojeModel.tblUserSkills">
+        <MappingFragment StoreEntitySet="tblUserSkills">
+          <ScalarProperty Name="UserSkillsID" ColumnName="UserSkillsID" />
+          <ScalarProperty Name="SkilsDetailsID" ColumnName="SkilsDetailsID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUserType">
+      <EntityTypeMapping TypeName="stajprojeModel.tblUserType">
+        <MappingFragment StoreEntitySet="tblUserType">
+          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+          <ScalarProperty Name="UserTypeName" ColumnName="UserTypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWorks">
+      <EntityTypeMapping TypeName="stajprojeModel.tblWorks">
+        <MappingFragment StoreEntitySet="tblWorks">
+          <ScalarProperty Name="WorkID" ColumnName="WorkID" />
+          <ScalarProperty Name="PersonelJobName" ColumnName="PersonelJobName" />
+          <ScalarProperty Name="PersonelJobStartDate" ColumnName="PersonelJobStartDate" />
+          <ScalarProperty Name="PersonelJobFinishDate" ColumnName="PersonelJobFinishDate" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="WorksPositionID" ColumnName="WorksPositionID" />
+          <ScalarProperty Name="WorksActive" ColumnName="WorksActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblWorksPosition">
+      <EntityTypeMapping TypeName="stajprojeModel.tblWorksPosition">
+        <MappingFragment StoreEntitySet="tblWorksPosition">
+          <ScalarProperty Name="WorksPositionID" ColumnName="WorksPositionID" />
+          <ScalarProperty Name="WorksPositionName" ColumnName="WorksPositionName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

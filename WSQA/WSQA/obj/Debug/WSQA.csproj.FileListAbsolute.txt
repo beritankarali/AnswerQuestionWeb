@@ -1,0 +1,31 @@
+C:\Users\Sema\Desktop\SORU VE CEVAP\WSQA\WSQA\bin\WSQA.dll.config
+C:\Users\Sema\Desktop\SORU VE CEVAP\WSQA\WSQA\bin\WSQA.dll
+C:\Users\Sema\Desktop\SORU VE CEVAP\WSQA\WSQA\bin\WSQA.pdb
+C:\Users\Sema\Desktop\SORU VE CEVAP\WSQA\WSQA\bin\EntityFramework.dll
+C:\Users\Sema\Desktop\SORU VE CEVAP\WSQA\WSQA\bin\EntityFramework.xml
+C:\Users\Sema\Desktop\SORU VE CEVAP\WSQA\WSQA\obj\Debug\WSQA.dll
+C:\Users\Sema\Desktop\SORU VE CEVAP\WSQA\WSQA\obj\Debug\WSQA.pdb
+C:\Users\Sema\Desktop\SORU VE CEVAP\WSQA\WSQA\bin\App_Data\stajproje.mdf
+C:\Users\Sema\Desktop\SORU VE CEVAP\WSQA\WSQA\bin\App_Data\stajproje_log.ldf
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\WSQA\WSQA\bin\App_Data\stajproje.mdf
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\WSQA\WSQA\bin\App_Data\stajproje_log.ldf
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\WSQA\WSQA\bin\WSQA.dll.config
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\WSQA\WSQA\bin\WSQA.dll
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\WSQA\WSQA\bin\WSQA.pdb
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\WSQA\WSQA\bin\EntityFramework.dll
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\WSQA\WSQA\bin\EntityFramework.xml
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\WSQA\WSQA\obj\Debug\WSQA.dll
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\WSQA\WSQA\obj\Debug\WSQA.pdb
+C:\Users\Sema\Desktop\Emrahın yaptığı kısıma kadar\WSQA\WSQA\obj\Debug\WSQA.csprojResolveAssemblyReference.cache
+C:\Users\Sema\Desktop\SOA__SMB\WSQA\WSQA\bin\App_Data\stajproje.mdf
+C:\Users\Sema\Desktop\SOA__SMB\WSQA\WSQA\bin\App_Data\stajproje_log.ldf
+C:\Users\Sema\Desktop\SOA__SMB\WSQA\WSQA\bin\WSQA.dll.config
+C:\Users\Sema\Desktop\SOA__SMB\WSQA\WSQA\bin\WSQA.dll
+C:\Users\Sema\Desktop\SOA__SMB\WSQA\WSQA\bin\WSQA.pdb
+C:\Users\Sema\Desktop\SOA__SMB\WSQA\WSQA\bin\EntityFramework.dll
+C:\Users\Sema\Desktop\SOA__SMB\WSQA\WSQA\bin\EntityFramework.xml
+C:\Users\Sema\Desktop\SOA__SMB\WSQA\WSQA\obj\Debug\WSQA.dll
+C:\Users\Sema\Desktop\SOA__SMB\WSQA\WSQA\obj\Debug\WSQA.pdb
+C:\Users\Sema\Desktop\SOA__SMB\WSQA\WSQA\obj\Debug\WSQA.csprojResolveAssemblyReference.cache
+C:\Users\beritan\Desktop\SOA__SMB\WSQA\WSQA\obj\Debug\WSQA.csprojResolveAssemblyReference.cache
+C:\Users\beritan\Desktop\SOA__SMB\WSQA\WSQA\obj\Debug\WSQA.dll

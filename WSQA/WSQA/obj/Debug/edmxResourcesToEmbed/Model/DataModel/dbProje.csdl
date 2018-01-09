@@ -1,0 +1,2403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DB_A151C9_beritankModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tblCategory">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ParentCategoryID" Type="Int32" />
+    <NavigationProperty Name="tblCategory1" Relationship="Self.FK_tblCategory_tblCategory" FromRole="tblCategory" ToRole="tblCategory1" />
+    <NavigationProperty Name="tblCategory2" Relationship="Self.FK_tblCategory_tblCategory" FromRole="tblCategory1" ToRole="tblCategory" />
+    <NavigationProperty Name="tblCourses" Relationship="Self.FK_tblCourses_tblCategory" FromRole="tblCategory" ToRole="tblCourses" />
+  </EntityType>
+  <EntityType Name="tblCompanies">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CompanyDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CompanyAbout" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblCompanies_tblUsers" FromRole="tblCompanies" ToRole="tblUsers" />
+    <NavigationProperty Name="tblJobs" Relationship="Self.FK_tblJobs_tblCompanies" FromRole="tblCompanies" ToRole="tblJobs" />
+    <NavigationProperty Name="tblProjectAds" Relationship="Self.FK_tblProjectAds_tblCompanies" FromRole="tblCompanies" ToRole="tblProjectAds" />
+    <NavigationProperty Name="tblProjectApplications" Relationship="Self.FK_tblProjectApplications_tblCompanies" FromRole="tblCompanies" ToRole="tblProjectApplications" />
+  </EntityType>
+  <EntityType Name="tblConferenceCourses">
+    <Key>
+      <PropertyRef Name="ConferenceCoursID" />
+    </Key>
+    <Property Name="ConferenceCoursID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ConferenceCoursName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ConferenceCoursDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblConferenceCourses_tblUsers" FromRole="tblConferenceCourses" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblCountries">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblProvinces" Relationship="Self.FK_tbltblProvinces_tblCountries" FromRole="tblCountries" ToRole="tblProvinces" />
+    <NavigationProperty Name="tblUniversities" Relationship="Self.FK_tblUniversities_tblCountries" FromRole="tblCountries" ToRole="tblUniversities" />
+  </EntityType>
+  <EntityType Name="tblCourseComment">
+    <Key>
+      <PropertyRef Name="CourseCommentID" />
+    </Key>
+    <Property Name="CourseCommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="CommentContent" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CourseID" Type="Int32" Nullable="false" />
+    <Property Name="CourseCommentStatusID" Type="Int32" Nullable="false" />
+    <Property Name="AnsweredCommentID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblCourseComment1" Relationship="Self.FK_tblCourseComment_tblCourseComment" FromRole="tblCourseComment" ToRole="tblCourseComment1" />
+    <NavigationProperty Name="tblCourseComment2" Relationship="Self.FK_tblCourseComment_tblCourseComment" FromRole="tblCourseComment1" ToRole="tblCourseComment" />
+    <NavigationProperty Name="tblCourseCommentStatus" Relationship="Self.FK_tblCourseComment_tblCourseCommentStatus" FromRole="tblCourseComment" ToRole="tblCourseCommentStatus" />
+    <NavigationProperty Name="tblCourses" Relationship="Self.FK_tblCourseComment_tblCourses" FromRole="tblCourseComment" ToRole="tblCourses" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblCourseComment_tblUsers" FromRole="tblCourseComment" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblCourseCommentStatus">
+    <Key>
+      <PropertyRef Name="CourseCommentStatusID" />
+    </Key>
+    <Property Name="CourseCommentStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseCommentStatusName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblCourseComment" Relationship="Self.FK_tblCourseComment_tblCourseCommentStatus" FromRole="tblCourseCommentStatus" ToRole="tblCourseComment" />
+  </EntityType>
+  <EntityType Name="tblCourseKeyword">
+    <Key>
+      <PropertyRef Name="CourseKeywordID" />
+    </Key>
+    <Property Name="CourseKeywordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseKeyword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblCourseKeywords" Relationship="Self.FK_tblCourseKeywords_tblCourseKeyword" FromRole="tblCourseKeyword" ToRole="tblCourseKeywords" />
+  </EntityType>
+  <EntityType Name="tblCourseKeywords">
+    <Key>
+      <PropertyRef Name="CourseKeywordsID" />
+    </Key>
+    <Property Name="CourseKeywordsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseID" Type="Int32" />
+    <Property Name="CourseKeywordID" Type="Int32" />
+    <NavigationProperty Name="tblCourseKeyword" Relationship="Self.FK_tblCourseKeywords_tblCourseKeyword" FromRole="tblCourseKeywords" ToRole="tblCourseKeyword" />
+    <NavigationProperty Name="tblCourses" Relationship="Self.FK_tblCourseKeywords_tblCourses" FromRole="tblCourseKeywords" ToRole="tblCourses" />
+  </EntityType>
+  <EntityType Name="tblCourseLevel">
+    <Key>
+      <PropertyRef Name="CourseLevelID" />
+    </Key>
+    <Property Name="CourseLevelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblCourses" Relationship="Self.FK_tblCourses_tblCourseLevel" FromRole="tblCourseLevel" ToRole="tblCourses" />
+  </EntityType>
+  <EntityType Name="tblCourseRate">
+    <Key>
+      <PropertyRef Name="CourseRateID" />
+    </Key>
+    <Property Name="CourseRateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="Rate" Type="Byte" Nullable="false" />
+    <Property Name="RatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tblCourses" Relationship="Self.FK_tblCourseRate_tblCourses" FromRole="tblCourseRate" ToRole="tblCourses" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblCourseRate_tblUsers" FromRole="tblCourseRate" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblCourses">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="CourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CourseLevelID" Type="Int32" Nullable="false" />
+    <Property Name="CourseStatusID" Type="Int32" Nullable="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="YoutubeURL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblCategory" Relationship="Self.FK_tblCourses_tblCategory" FromRole="tblCourses" ToRole="tblCategory" />
+    <NavigationProperty Name="tblCourseComment" Relationship="Self.FK_tblCourseComment_tblCourses" FromRole="tblCourses" ToRole="tblCourseComment" />
+    <NavigationProperty Name="tblCourseKeywords" Relationship="Self.FK_tblCourseKeywords_tblCourses" FromRole="tblCourses" ToRole="tblCourseKeywords" />
+    <NavigationProperty Name="tblCourseLevel" Relationship="Self.FK_tblCourses_tblCourseLevel" FromRole="tblCourses" ToRole="tblCourseLevel" />
+    <NavigationProperty Name="tblCourseRate" Relationship="Self.FK_tblCourseRate_tblCourses" FromRole="tblCourses" ToRole="tblCourseRate" />
+    <NavigationProperty Name="tblCourseStatus" Relationship="Self.FK_tblCourses_tblCourseStatus" FromRole="tblCourses" ToRole="tblCourseStatus" />
+    <NavigationProperty Name="tblLesson" Relationship="Self.FK_tblLesson_tblCourses" FromRole="tblCourses" ToRole="tblLesson" />
+    <NavigationProperty Name="tblUsersCourses" Relationship="Self.FK_tblUsersCourses_tblCourses" FromRole="tblCourses" ToRole="tblUsersCourses" />
+  </EntityType>
+  <EntityType Name="tblCourseStatus">
+    <Key>
+      <PropertyRef Name="CourseStatusID" />
+    </Key>
+    <Property Name="CourseStatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblCourses" Relationship="Self.FK_tblCourses_tblCourseStatus" FromRole="tblCourseStatus" ToRole="tblCourses" />
+  </EntityType>
+  <EntityType Name="tblDepartments">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblJobsDepartment" Relationship="Self.FK_tblJobsDepartment_tblDepartments" FromRole="tblDepartments" ToRole="tblJobsDepartment" />
+  </EntityType>
+  <EntityType Name="tblDisabledStatus">
+    <Key>
+      <PropertyRef Name="DisabledID" />
+    </Key>
+    <Property Name="DisabledID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DisabledName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblJobsDisabled" Relationship="Self.FK_tblJobsDisabled_tblDisabledStatus" FromRole="tblDisabledStatus" ToRole="tblJobsDisabled" />
+    <NavigationProperty Name="tblProfiles" Relationship="Self.FK_tblProfiles_tblDisabledStatus" FromRole="tblDisabledStatus" ToRole="tblProfiles" />
+  </EntityType>
+  <EntityType Name="tblDistricts">
+    <Key>
+      <PropertyRef Name="DistrictID" />
+    </Key>
+    <Property Name="DistrictID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DistrictName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProvinceID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblProvinces" Relationship="Self.FK_tblDistricts_tbltblProvinces" FromRole="tblDistricts" ToRole="tblProvinces" />
+    <NavigationProperty Name="tblJobs" Relationship="Self.FK_tblJobs_tblDistricts" FromRole="tblDistricts" ToRole="tblJobs" />
+    <NavigationProperty Name="tblProfiles" Relationship="Self.FK_tblProfiles_tblDistricts" FromRole="tblDistricts" ToRole="tblProfiles" />
+  </EntityType>
+  <EntityType Name="tblFaculties">
+    <Key>
+      <PropertyRef Name="FacultyID" />
+    </Key>
+    <Property Name="FacultyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FacultyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UniversityID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblUniversities" Relationship="Self.FK_tblFaculties_tblUniversities" FromRole="tblFaculties" ToRole="tblUniversities" />
+    <NavigationProperty Name="tblSections" Relationship="Self.FK_tblSections_tblFaculties" FromRole="tblFaculties" ToRole="tblSections" />
+  </EntityType>
+  <EntityType Name="tblFollowing">
+    <Key>
+      <PropertyRef Name="FollowingID" />
+    </Key>
+    <Property Name="FollowingID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FollowingUserID" Type="Int32" Nullable="false" />
+    <Property Name="FollowDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblFollowing_tblUsers" FromRole="tblFollowing" ToRole="tblUsers" />
+    <NavigationProperty Name="tblNotifications" Relationship="Self.FK_tblNotifications_tblFollowing" FromRole="tblFollowing" ToRole="tblNotifications" />
+  </EntityType>
+  <EntityType Name="tblFollowRequest">
+    <Key>
+      <PropertyRef Name="FollowRequestID" />
+    </Key>
+    <Property Name="FollowRequestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FollowDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="FollowID" Type="Int32" Nullable="false" />
+    <Property Name="FollowApproval" Type="Boolean" Nullable="false" />
+    <Property Name="FollowRequestSeen" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblFollowRequest_tblUsers" FromRole="tblFollowRequest" ToRole="tblUsers" />
+    <NavigationProperty Name="tblNotifications" Relationship="Self.FK_tblNotifications_tblFollowRequest" FromRole="tblFollowRequest" ToRole="tblNotifications" />
+  </EntityType>
+  <EntityType Name="tblForeignLanguages">
+    <Key>
+      <PropertyRef Name="ForeignLanguageID" />
+    </Key>
+    <Property Name="ForeignLanguageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ForeignLanguageName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblUserLanguages" Relationship="Self.FK_tblUserLanguages_tblForeignLanguages" FromRole="tblForeignLanguages" ToRole="tblUserLanguages" />
+  </EntityType>
+  <EntityType Name="tblHobbies">
+    <Key>
+      <PropertyRef Name="HobbyID" />
+    </Key>
+    <Property Name="HobbyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HobbyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblHobbies_tblUsers" FromRole="tblHobbies" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblInterView">
+    <Key>
+      <PropertyRef Name="InterviewID" />
+    </Key>
+    <Property Name="InterviewID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InterviewQues" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="JobID" Type="Int32" />
+    <NavigationProperty Name="tblJobs" Relationship="Self.FK_tblInterView_tblJobs" FromRole="tblInterView" ToRole="tblJobs" />
+    <NavigationProperty Name="tblInterViewAnswers" Relationship="Self.FK_tblInterViewAnswers_tblInterView" FromRole="tblInterView" ToRole="tblInterViewAnswers" />
+  </EntityType>
+  <EntityType Name="tblInterViewAnswers">
+    <Key>
+      <PropertyRef Name="InterViewAnswersID" />
+    </Key>
+    <Property Name="InterViewAnswersID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="InterViewAnswers" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+    <Property Name="InterviewID" Type="Int32" />
+    <Property Name="QuesAnswersStart" Type="DateTime" Precision="3" />
+    <Property Name="QuesAnswersFinish" Type="DateTime" Precision="3" />
+    <Property Name="InterviweFileExtends" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblInterView" Relationship="Self.FK_tblInterViewAnswers_tblInterView" FromRole="tblInterViewAnswers" ToRole="tblInterView" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblInterViewAnswers_tblUsers" FromRole="tblInterViewAnswers" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblJobApplications">
+    <Key>
+      <PropertyRef Name="JobApplicationsID" />
+    </Key>
+    <Property Name="JobApplicationsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="ApplicationText" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblJobs" Relationship="Self.FK_tblJobApplications_tblJobs" FromRole="tblJobApplications" ToRole="tblJobs" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblJobApplications_tblUsers" FromRole="tblJobApplications" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblJobOperationType">
+    <Key>
+      <PropertyRef Name="JobOperationTypeID" />
+    </Key>
+    <Property Name="JobOperationTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OperationTypeID" Type="Int32" Nullable="false" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblJobs" Relationship="Self.FK_tblJobOperationType_tblJobs" FromRole="tblJobOperationType" ToRole="tblJobs" />
+    <NavigationProperty Name="tblOperationType" Relationship="Self.FK_tblJobOperationType_tblOperationType" FromRole="tblJobOperationType" ToRole="tblOperationType" />
+  </EntityType>
+  <EntityType Name="tblJobs">
+    <Key>
+      <PropertyRef Name="JobID" />
+    </Key>
+    <Property Name="JobID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="WorksPositionID" Type="Int32" Nullable="false" />
+    <Property Name="SectorID" Type="Int32" Nullable="false" />
+    <Property Name="QualificationsText" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="JobDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DistrictID" Type="Int32" Nullable="false" />
+    <Property Name="JobStartDate" Type="DateTime" Precision="0" />
+    <Property Name="JobStatu" Type="Boolean" Nullable="false" />
+    <Property Name="PersonelNumber" Type="Int32" />
+    <Property Name="JobFinishDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tblCompanies" Relationship="Self.FK_tblJobs_tblCompanies" FromRole="tblJobs" ToRole="tblCompanies" />
+    <NavigationProperty Name="tblDistricts" Relationship="Self.FK_tblJobs_tblDistricts" FromRole="tblJobs" ToRole="tblDistricts" />
+    <NavigationProperty Name="tblInterView" Relationship="Self.FK_tblInterView_tblJobs" FromRole="tblJobs" ToRole="tblInterView" />
+    <NavigationProperty Name="tblJobApplications" Relationship="Self.FK_tblJobApplications_tblJobs" FromRole="tblJobs" ToRole="tblJobApplications" />
+    <NavigationProperty Name="tblJobOperationType" Relationship="Self.FK_tblJobOperationType_tblJobs" FromRole="tblJobs" ToRole="tblJobOperationType" />
+    <NavigationProperty Name="tblSectors" Relationship="Self.FK_tblJobs_tblSectors" FromRole="tblJobs" ToRole="tblSectors" />
+    <NavigationProperty Name="tblWorksPosition" Relationship="Self.FK_tblJobs_tblWorksPosition" FromRole="tblJobs" ToRole="tblWorksPosition" />
+    <NavigationProperty Name="tblJobsDepartment" Relationship="Self.FK_tblJobsDepartment_tblJobs" FromRole="tblJobs" ToRole="tblJobsDepartment" />
+    <NavigationProperty Name="tblJobsDisabled" Relationship="Self.FK_tblJobsDisabled_tblJobs" FromRole="tblJobs" ToRole="tblJobsDisabled" />
+    <NavigationProperty Name="tblJobsSkils" Relationship="Self.FK_tblJobsSkils_tblJobs" FromRole="tblJobs" ToRole="tblJobsSkils" />
+    <NavigationProperty Name="tblJobsEducationLevel" Relationship="Self.FK_tblJonsEducationLevel_tblJobs" FromRole="tblJobs" ToRole="tblJobsEducationLevel" />
+  </EntityType>
+  <EntityType Name="tblJobsDepartment">
+    <Key>
+      <PropertyRef Name="JobsDepartment" />
+    </Key>
+    <Property Name="JobsDepartment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmentID" Type="Int32" />
+    <Property Name="JobID" Type="Int32" />
+    <NavigationProperty Name="tblDepartments" Relationship="Self.FK_tblJobsDepartment_tblDepartments" FromRole="tblJobsDepartment" ToRole="tblDepartments" />
+    <NavigationProperty Name="tblJobs" Relationship="Self.FK_tblJobsDepartment_tblJobs" FromRole="tblJobsDepartment" ToRole="tblJobs" />
+  </EntityType>
+  <EntityType Name="tblJobsDisabled">
+    <Key>
+      <PropertyRef Name="JobsDisabledID" />
+    </Key>
+    <Property Name="JobsDisabledID" Type="Int32" Nullable="false" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="DisabledID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblDisabledStatus" Relationship="Self.FK_tblJobsDisabled_tblDisabledStatus" FromRole="tblJobsDisabled" ToRole="tblDisabledStatus" />
+    <NavigationProperty Name="tblJobs" Relationship="Self.FK_tblJobsDisabled_tblJobs" FromRole="tblJobsDisabled" ToRole="tblJobs" />
+  </EntityType>
+  <EntityType Name="tblJobsEducationLevel">
+    <Key>
+      <PropertyRef Name="JobsEducationLevelID" />
+    </Key>
+    <Property Name="JobsEducationLevelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <Property Name="EducationTypeID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblJobs" Relationship="Self.FK_tblJonsEducationLevel_tblJobs" FromRole="tblJobsEducationLevel" ToRole="tblJobs" />
+    <NavigationProperty Name="tblPersonelEducationType" Relationship="Self.FK_tblJonsEducationLevel_tblEducationType" FromRole="tblJobsEducationLevel" ToRole="tblPersonelEducationType" />
+  </EntityType>
+  <EntityType Name="tblJobsSkils">
+    <Key>
+      <PropertyRef Name="JobskilsID" />
+    </Key>
+    <Property Name="JobskilsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SkilsDetailsID" Type="Int32" Nullable="false" />
+    <Property Name="JobID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblJobs" Relationship="Self.FK_tblJobsSkils_tblJobs" FromRole="tblJobsSkils" ToRole="tblJobs" />
+    <NavigationProperty Name="tblSkilsDetails" Relationship="Self.FK_tblJobsSkils_tblSkilsDetails" FromRole="tblJobsSkils" ToRole="tblSkilsDetails" />
+  </EntityType>
+  <EntityType Name="tblLesson">
+    <Key>
+      <PropertyRef Name="LessonID" />
+    </Key>
+    <Property Name="LessonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AddedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CourseID" Type="Int32" Nullable="false" />
+    <Property Name="VideoDuration" Type="Int32" Nullable="false" />
+    <Property Name="VideoLink" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblCourses" Relationship="Self.FK_tblLesson_tblCourses" FromRole="tblLesson" ToRole="tblCourses" />
+  </EntityType>
+  <EntityType Name="tblMessages">
+    <Key>
+      <PropertyRef Name="MessageID" />
+    </Key>
+    <Property Name="MessageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MessagePostID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="MessageText" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MessageDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Seen" Type="Boolean" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblMessages_tblUsers" FromRole="tblMessages" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblNotifications">
+    <Key>
+      <PropertyRef Name="NotificationID" />
+    </Key>
+    <Property Name="NotificationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NotificationDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="NotificationSeen" Type="Boolean" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="SharesCommentID" Type="Int32" />
+    <Property Name="SharesLikeID" Type="Int32" />
+    <Property Name="QuestionLikeAndDislikeID" Type="Int32" />
+    <Property Name="QuestionAnserwsID" Type="Int32" />
+    <Property Name="QuestionAnwersAndDislikeID" Type="Int32" />
+    <Property Name="FollowRequestID" Type="Int32" />
+    <Property Name="FollowingID" Type="Int32" />
+    <Property Name="SkillsValidationID" Type="Int32" />
+    <Property Name="ProjectApplicationID" Type="Int32" />
+    <NavigationProperty Name="tblFollowing" Relationship="Self.FK_tblNotifications_tblFollowing" FromRole="tblNotifications" ToRole="tblFollowing" />
+    <NavigationProperty Name="tblFollowRequest" Relationship="Self.FK_tblNotifications_tblFollowRequest" FromRole="tblNotifications" ToRole="tblFollowRequest" />
+    <NavigationProperty Name="tblProjectApplications" Relationship="Self.FK_tblNotifications_tblProjectApplications" FromRole="tblNotifications" ToRole="tblProjectApplications" />
+    <NavigationProperty Name="tblQuestionAnswers" Relationship="Self.FK_tblNotifications_tblQuestionAnswers" FromRole="tblNotifications" ToRole="tblQuestionAnswers" />
+    <NavigationProperty Name="tblQuestionAnwersAndDislike" Relationship="Self.FK_tblNotifications_tblQuestionAnwersAndDislike" FromRole="tblNotifications" ToRole="tblQuestionAnwersAndDislike" />
+    <NavigationProperty Name="tblQuestionLikeAndDislike" Relationship="Self.FK_tblNotifications_tblQuestionLikeAndDislike" FromRole="tblNotifications" ToRole="tblQuestionLikeAndDislike" />
+    <NavigationProperty Name="tblSharesComment" Relationship="Self.FK_tblNotifications_tblSharesComment" FromRole="tblNotifications" ToRole="tblSharesComment" />
+    <NavigationProperty Name="tblSharesLike" Relationship="Self.FK_tblNotifications_tblSharesLike" FromRole="tblNotifications" ToRole="tblSharesLike" />
+    <NavigationProperty Name="tblSkillsValidation" Relationship="Self.FK_tblNotifications_tblSkillsValidation" FromRole="tblNotifications" ToRole="tblSkillsValidation" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblNotifications_tblUsers" FromRole="tblNotifications" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblOldProject">
+    <Key>
+      <PropertyRef Name="OldProjectID" />
+    </Key>
+    <Property Name="OldProjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OldProjectName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UsersID" Type="Int32" Nullable="false" />
+    <Property Name="OldProjectDesc" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Teknolojis" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WorksID" Type="Int32" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblOldProject_tblUsers" FromRole="tblOldProject" ToRole="tblUsers" />
+    <NavigationProperty Name="tblWorks" Relationship="Self.FK_tblOldProject_tblWorks" FromRole="tblOldProject" ToRole="tblWorks" />
+  </EntityType>
+  <EntityType Name="tblOperationType">
+    <Key>
+      <PropertyRef Name="OperationTypeID" />
+    </Key>
+    <Property Name="OperationTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OperationTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblJobOperationType" Relationship="Self.FK_tblJobOperationType_tblOperationType" FromRole="tblOperationType" ToRole="tblJobOperationType" />
+  </EntityType>
+  <EntityType Name="tblPersonelEducation">
+    <Key>
+      <PropertyRef Name="PersonelEducationID" />
+    </Key>
+    <Property Name="PersonelEducationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="PersonelEducationTypeID" Type="Int32" Nullable="false" />
+    <Property Name="SectionID" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FinishDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tblPersonelEducationType" Relationship="Self.FK_tblEducation_tblEducationType" FromRole="tblPersonelEducation" ToRole="tblPersonelEducationType" />
+    <NavigationProperty Name="tblSections" Relationship="Self.FK_tblEducation_tblSections" FromRole="tblPersonelEducation" ToRole="tblSections" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblEducation_tblUsers" FromRole="tblPersonelEducation" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblPersonelEducationType">
+    <Key>
+      <PropertyRef Name="PersonelEducationTypeID" />
+    </Key>
+    <Property Name="PersonelEducationTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonelEducationTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblJobsEducationLevel" Relationship="Self.FK_tblJonsEducationLevel_tblEducationType" FromRole="tblPersonelEducationType" ToRole="tblJobsEducationLevel" />
+    <NavigationProperty Name="tblPersonelEducation" Relationship="Self.FK_tblEducation_tblEducationType" FromRole="tblPersonelEducationType" ToRole="tblPersonelEducation" />
+  </EntityType>
+  <EntityType Name="tblProfiles">
+    <Key>
+      <PropertyRef Name="ProfileID" />
+    </Key>
+    <Property Name="ProfileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="Sex" Type="Boolean" />
+    <Property Name="Birtdate" Type="DateTime" Precision="0" />
+    <Property Name="DistrictID" Type="Int32" />
+    <Property Name="AboutMe" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DisabledID" Type="Int32" />
+    <Property Name="DisabledValue" Type="Double" />
+    <Property Name="Avatar" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Adress" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="ChatStatus" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ProfilePrivacy" Type="Boolean" />
+    <NavigationProperty Name="tblDisabledStatus" Relationship="Self.FK_tblProfiles_tblDisabledStatus" FromRole="tblProfiles" ToRole="tblDisabledStatus" />
+    <NavigationProperty Name="tblDistricts" Relationship="Self.FK_tblProfiles_tblDistricts" FromRole="tblProfiles" ToRole="tblDistricts" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblProfiles_tblUsers" FromRole="tblProfiles" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblProjectAds">
+    <Key>
+      <PropertyRef Name="ProjectAwardID" />
+    </Key>
+    <Property Name="ProjectAwardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectSenderID" Type="Int32" Nullable="false" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProjectAbout" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProjectDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ProjectState" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tblCompanies" Relationship="Self.FK_tblProjectAds_tblCompanies" FromRole="tblProjectAds" ToRole="tblCompanies" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblProjectAds_tblUsers" FromRole="tblProjectAds" ToRole="tblUsers" />
+    <NavigationProperty Name="tblProjectApplications" Relationship="Self.FK_tblProjectApplications_tblProjectAds" FromRole="tblProjectAds" ToRole="tblProjectApplications" />
+  </EntityType>
+  <EntityType Name="tblProjectApplications">
+    <Key>
+      <PropertyRef Name="ProjectApplicationID" />
+    </Key>
+    <Property Name="ProjectApplicationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectApplicationDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MinMoney" Type="Double" Nullable="false" />
+    <Property Name="MaxMoney" Type="Double" Nullable="false" />
+    <Property Name="ProjectAwardID" Type="Int32" Nullable="false" />
+    <Property Name="Projectstatus" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="tblCompanies" Relationship="Self.FK_tblProjectApplications_tblCompanies" FromRole="tblProjectApplications" ToRole="tblCompanies" />
+    <NavigationProperty Name="tblNotifications" Relationship="Self.FK_tblNotifications_tblProjectApplications" FromRole="tblProjectApplications" ToRole="tblNotifications" />
+    <NavigationProperty Name="tblProjectAds" Relationship="Self.FK_tblProjectApplications_tblProjectAds" FromRole="tblProjectApplications" ToRole="tblProjectAds" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblProjectApplications_tblUsers" FromRole="tblProjectApplications" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblProvinces">
+    <Key>
+      <PropertyRef Name="ProvinceID" />
+    </Key>
+    <Property Name="ProvinceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProvinceName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CountryID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblCountries" Relationship="Self.FK_tbltblProvinces_tblCountries" FromRole="tblProvinces" ToRole="tblCountries" />
+    <NavigationProperty Name="tblDistricts" Relationship="Self.FK_tblDistricts_tbltblProvinces" FromRole="tblProvinces" ToRole="tblDistricts" />
+  </EntityType>
+  <EntityType Name="tblQuestionAnswers">
+    <Key>
+      <PropertyRef Name="QuestionAnserwsID" />
+    </Key>
+    <Property Name="QuestionAnserwsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AnswerText" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AnswerUserID" Type="Int32" Nullable="false" />
+    <Property Name="Accuracy" Type="Int32" Nullable="false" />
+    <Property Name="QuestionID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblNotifications" Relationship="Self.FK_tblNotifications_tblQuestionAnswers" FromRole="tblQuestionAnswers" ToRole="tblNotifications" />
+    <NavigationProperty Name="tblQuestions" Relationship="Self.FK_tblAnswers_tblQuestions" FromRole="tblQuestionAnswers" ToRole="tblQuestions" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblAnswers_tblUsers" FromRole="tblQuestionAnswers" ToRole="tblUsers" />
+    <NavigationProperty Name="tblQuestionAnwersAndDislike" Relationship="Self.FK_tblQuestionAnwersAndDislike_tblQuestionAnswers" FromRole="tblQuestionAnswers" ToRole="tblQuestionAnwersAndDislike" />
+  </EntityType>
+  <EntityType Name="tblQuestionAnwersAndDislike">
+    <Key>
+      <PropertyRef Name="QuestionAnwersAndDislikeID" />
+    </Key>
+    <Property Name="QuestionAnwersAndDislikeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionAnserwsID" Type="Int32" Nullable="false" />
+    <Property Name="UsersID" Type="Int32" Nullable="false" />
+    <Property Name="QuestionAnserwsLike" Type="Boolean" />
+    <NavigationProperty Name="tblNotifications" Relationship="Self.FK_tblNotifications_tblQuestionAnwersAndDislike" FromRole="tblQuestionAnwersAndDislike" ToRole="tblNotifications" />
+    <NavigationProperty Name="tblQuestionAnswers" Relationship="Self.FK_tblQuestionAnwersAndDislike_tblQuestionAnswers" FromRole="tblQuestionAnwersAndDislike" ToRole="tblQuestionAnswers" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblQuestionAnwersAndDislike_tblUsers" FromRole="tblQuestionAnwersAndDislike" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblQuestionAreaType">
+    <Key>
+      <PropertyRef Name="SubjectID" />
+    </Key>
+    <Property Name="SubjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AreaID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblQuestions" Relationship="Self.FK_tblQuestions_tblThreads" FromRole="tblQuestionAreaType" ToRole="tblQuestions" />
+    <NavigationProperty Name="tblQuestionsAreas" Relationship="Self.FK_tblThreads_tblAreas" FromRole="tblQuestionAreaType" ToRole="tblQuestionsAreas" />
+  </EntityType>
+  <EntityType Name="tblQuestionLikeAndDislike">
+    <Key>
+      <PropertyRef Name="QuestionLikeAndDislikeID" />
+    </Key>
+    <Property Name="QuestionLikeAndDislikeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="QuestionLike" Type="Boolean" />
+    <NavigationProperty Name="tblNotifications" Relationship="Self.FK_tblNotifications_tblQuestionLikeAndDislike" FromRole="tblQuestionLikeAndDislike" ToRole="tblNotifications" />
+    <NavigationProperty Name="tblQuestions" Relationship="Self.FK_tblQuestionLikeAndDislike_tblQuestions" FromRole="tblQuestionLikeAndDislike" ToRole="tblQuestions" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblQuestionLikeAndDislike_tblUsers" FromRole="tblQuestionLikeAndDislike" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblQuestions">
+    <Key>
+      <PropertyRef Name="QuestionID" />
+    </Key>
+    <Property Name="QuestionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="QuestionText" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="SubjectID" Type="Int32" Nullable="false" />
+    <Property Name="QuestionImage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblQuestionAnswers" Relationship="Self.FK_tblAnswers_tblQuestions" FromRole="tblQuestions" ToRole="tblQuestionAnswers" />
+    <NavigationProperty Name="tblQuestionAreaType" Relationship="Self.FK_tblQuestions_tblThreads" FromRole="tblQuestions" ToRole="tblQuestionAreaType" />
+    <NavigationProperty Name="tblQuestionLikeAndDislike" Relationship="Self.FK_tblQuestionLikeAndDislike_tblQuestions" FromRole="tblQuestions" ToRole="tblQuestionLikeAndDislike" />
+    <NavigationProperty Name="tblTags" Relationship="Self.FK_Tags_tblQuestions" FromRole="tblQuestions" ToRole="tblTags" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblQuestions_tblUsers" FromRole="tblQuestions" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblQuestionsAreas">
+    <Key>
+      <PropertyRef Name="OuestionAreaID" />
+    </Key>
+    <Property Name="OuestionAreaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OuestionAreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblQuestionAreaType" Relationship="Self.FK_tblThreads_tblAreas" FromRole="tblQuestionsAreas" ToRole="tblQuestionAreaType" />
+  </EntityType>
+  <EntityType Name="tblReferences">
+    <Key>
+      <PropertyRef Name="ReferenceID" />
+    </Key>
+    <Property Name="ReferenceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReferenceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ReferenceEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ReferenceNumber" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblReferences_tblUsers" FromRole="tblReferences" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblSections">
+    <Key>
+      <PropertyRef Name="SectionID" />
+    </Key>
+    <Property Name="SectionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SectionName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FacultyID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblFaculties" Relationship="Self.FK_tblSections_tblFaculties" FromRole="tblSections" ToRole="tblFaculties" />
+    <NavigationProperty Name="tblPersonelEducation" Relationship="Self.FK_tblEducation_tblSections" FromRole="tblSections" ToRole="tblPersonelEducation" />
+  </EntityType>
+  <EntityType Name="tblSectors">
+    <Key>
+      <PropertyRef Name="SectorID" />
+    </Key>
+    <Property Name="SectorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SectorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblJobs" Relationship="Self.FK_tblJobs_tblSectors" FromRole="tblSectors" ToRole="tblJobs" />
+  </EntityType>
+  <EntityType Name="tblShares">
+    <Key>
+      <PropertyRef Name="SharingID" />
+    </Key>
+    <Property Name="SharingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SharingText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SharingDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="SharingImages" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblTags" Relationship="Self.FK_Tags_tblShares" FromRole="tblShares" ToRole="tblTags" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblShares_tblUsers" FromRole="tblShares" ToRole="tblUsers" />
+    <NavigationProperty Name="tblSharesComment" Relationship="Self.FK_tblSharesComment_tblShares" FromRole="tblShares" ToRole="tblSharesComment" />
+    <NavigationProperty Name="tblSharesLike" Relationship="Self.FK_tblSharesLike_tblShares" FromRole="tblShares" ToRole="tblSharesLike" />
+    <NavigationProperty Name="tblSharesLike1" Relationship="Self.FK_tblSharesLike_tblShares1" FromRole="tblShares" ToRole="tblSharesLike" />
+  </EntityType>
+  <EntityType Name="tblSharesComment">
+    <Key>
+      <PropertyRef Name="SharesCommentID" />
+    </Key>
+    <Property Name="SharesCommentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SharesCommentDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="SharesCommentUsersID" Type="Int32" Nullable="false" />
+    <Property Name="SharesCommentText" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SharingID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblNotifications" Relationship="Self.FK_tblNotifications_tblSharesComment" FromRole="tblSharesComment" ToRole="tblNotifications" />
+    <NavigationProperty Name="tblShares" Relationship="Self.FK_tblSharesComment_tblShares" FromRole="tblSharesComment" ToRole="tblShares" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblSharesComment_tblUsers" FromRole="tblSharesComment" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblSharesLike">
+    <Key>
+      <PropertyRef Name="SharesLikeID" />
+    </Key>
+    <Property Name="SharesLikeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SharesLikeDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="SharesLikeUserID" Type="Int32" Nullable="false" />
+    <Property Name="SharingID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblNotifications" Relationship="Self.FK_tblNotifications_tblSharesLike" FromRole="tblSharesLike" ToRole="tblNotifications" />
+    <NavigationProperty Name="tblShares" Relationship="Self.FK_tblSharesLike_tblShares" FromRole="tblSharesLike" ToRole="tblShares" />
+    <NavigationProperty Name="tblShares1" Relationship="Self.FK_tblSharesLike_tblShares1" FromRole="tblSharesLike" ToRole="tblShares" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblSharesLike_tblUsers" FromRole="tblSharesLike" ToRole="tblUsers" />
+    <NavigationProperty Name="tblUsers1" Relationship="Self.FK_tblSharesLike_tblUsers1" FromRole="tblSharesLike" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblSkills">
+    <Key>
+      <PropertyRef Name="SkillID" />
+    </Key>
+    <Property Name="SkillID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SkillsName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblSkilsDetails" Relationship="Self.FK_tblSkilsDetails_tblSkills" FromRole="tblSkills" ToRole="tblSkilsDetails" />
+  </EntityType>
+  <EntityType Name="tblSkillsValidation">
+    <Key>
+      <PropertyRef Name="SkillsValidationID" />
+    </Key>
+    <Property Name="SkillsValidationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserSkillsID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblNotifications" Relationship="Self.FK_tblNotifications_tblSkillsValidation" FromRole="tblSkillsValidation" ToRole="tblNotifications" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblSkillsValidation_tblUsers" FromRole="tblSkillsValidation" ToRole="tblUsers" />
+    <NavigationProperty Name="tblUserSkills" Relationship="Self.FK_tblSkillsValidation_tblUserSkills" FromRole="tblSkillsValidation" ToRole="tblUserSkills" />
+  </EntityType>
+  <EntityType Name="tblSkilsDetails">
+    <Key>
+      <PropertyRef Name="SkilsDetailsID" />
+    </Key>
+    <Property Name="SkilsDetailsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SkilsDetailsName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SkillID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblJobsSkils" Relationship="Self.FK_tblJobsSkils_tblSkilsDetails" FromRole="tblSkilsDetails" ToRole="tblJobsSkils" />
+    <NavigationProperty Name="tblSkills" Relationship="Self.FK_tblSkilsDetails_tblSkills" FromRole="tblSkilsDetails" ToRole="tblSkills" />
+    <NavigationProperty Name="tblUserSkills" Relationship="Self.FK_tblUserSkills_tblSkilsDetails" FromRole="tblSkilsDetails" ToRole="tblUserSkills" />
+  </EntityType>
+  <EntityType Name="tblTags">
+    <Key>
+      <PropertyRef Name="TagID" />
+    </Key>
+    <Property Name="TagID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TagName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="QuestionID" Type="Int32" />
+    <Property Name="SharingID" Type="Int32" />
+    <NavigationProperty Name="tblQuestions" Relationship="Self.FK_Tags_tblQuestions" FromRole="tblTags" ToRole="tblQuestions" />
+    <NavigationProperty Name="tblShares" Relationship="Self.FK_Tags_tblShares" FromRole="tblTags" ToRole="tblShares" />
+  </EntityType>
+  <EntityType Name="tblUniversities">
+    <Key>
+      <PropertyRef Name="UniversityID" />
+    </Key>
+    <Property Name="UniversityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UniversityName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CountryID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblCountries" Relationship="Self.FK_tblUniversities_tblCountries" FromRole="tblUniversities" ToRole="tblCountries" />
+    <NavigationProperty Name="tblFaculties" Relationship="Self.FK_tblFaculties_tblUniversities" FromRole="tblUniversities" ToRole="tblFaculties" />
+  </EntityType>
+  <EntityType Name="tblUserLanguages">
+    <Key>
+      <PropertyRef Name="UserLanguageID" />
+    </Key>
+    <Property Name="UserLanguageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="UserLanguageLevel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ForeignLanguageID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblForeignLanguages" Relationship="Self.FK_tblUserLanguages_tblForeignLanguages" FromRole="tblUserLanguages" ToRole="tblForeignLanguages" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblUserLanguages_tblUsers" FromRole="tblUserLanguages" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblUsers">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TelNumber" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="UserTypeID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblCompanies" Relationship="Self.FK_tblCompanies_tblUsers" FromRole="tblUsers" ToRole="tblCompanies" />
+    <NavigationProperty Name="tblConferenceCourses" Relationship="Self.FK_tblConferenceCourses_tblUsers" FromRole="tblUsers" ToRole="tblConferenceCourses" />
+    <NavigationProperty Name="tblCourseComment" Relationship="Self.FK_tblCourseComment_tblUsers" FromRole="tblUsers" ToRole="tblCourseComment" />
+    <NavigationProperty Name="tblCourseRate" Relationship="Self.FK_tblCourseRate_tblUsers" FromRole="tblUsers" ToRole="tblCourseRate" />
+    <NavigationProperty Name="tblFollowing" Relationship="Self.FK_tblFollowing_tblUsers" FromRole="tblUsers" ToRole="tblFollowing" />
+    <NavigationProperty Name="tblFollowRequest" Relationship="Self.FK_tblFollowRequest_tblUsers" FromRole="tblUsers" ToRole="tblFollowRequest" />
+    <NavigationProperty Name="tblHobbies" Relationship="Self.FK_tblHobbies_tblUsers" FromRole="tblUsers" ToRole="tblHobbies" />
+    <NavigationProperty Name="tblInterViewAnswers" Relationship="Self.FK_tblInterViewAnswers_tblUsers" FromRole="tblUsers" ToRole="tblInterViewAnswers" />
+    <NavigationProperty Name="tblJobApplications" Relationship="Self.FK_tblJobApplications_tblUsers" FromRole="tblUsers" ToRole="tblJobApplications" />
+    <NavigationProperty Name="tblMessages" Relationship="Self.FK_tblMessages_tblUsers" FromRole="tblUsers" ToRole="tblMessages" />
+    <NavigationProperty Name="tblNotifications" Relationship="Self.FK_tblNotifications_tblUsers" FromRole="tblUsers" ToRole="tblNotifications" />
+    <NavigationProperty Name="tblOldProject" Relationship="Self.FK_tblOldProject_tblUsers" FromRole="tblUsers" ToRole="tblOldProject" />
+    <NavigationProperty Name="tblPersonelEducation" Relationship="Self.FK_tblEducation_tblUsers" FromRole="tblUsers" ToRole="tblPersonelEducation" />
+    <NavigationProperty Name="tblProfiles" Relationship="Self.FK_tblProfiles_tblUsers" FromRole="tblUsers" ToRole="tblProfiles" />
+    <NavigationProperty Name="tblProjectAds" Relationship="Self.FK_tblProjectAds_tblUsers" FromRole="tblUsers" ToRole="tblProjectAds" />
+    <NavigationProperty Name="tblProjectApplications" Relationship="Self.FK_tblProjectApplications_tblUsers" FromRole="tblUsers" ToRole="tblProjectApplications" />
+    <NavigationProperty Name="tblQuestionAnswers" Relationship="Self.FK_tblAnswers_tblUsers" FromRole="tblUsers" ToRole="tblQuestionAnswers" />
+    <NavigationProperty Name="tblQuestionAnwersAndDislike" Relationship="Self.FK_tblQuestionAnwersAndDislike_tblUsers" FromRole="tblUsers" ToRole="tblQuestionAnwersAndDislike" />
+    <NavigationProperty Name="tblQuestionLikeAndDislike" Relationship="Self.FK_tblQuestionLikeAndDislike_tblUsers" FromRole="tblUsers" ToRole="tblQuestionLikeAndDislike" />
+    <NavigationProperty Name="tblQuestions" Relationship="Self.FK_tblQuestions_tblUsers" FromRole="tblUsers" ToRole="tblQuestions" />
+    <NavigationProperty Name="tblReferences" Relationship="Self.FK_tblReferences_tblUsers" FromRole="tblUsers" ToRole="tblReferences" />
+    <NavigationProperty Name="tblShares" Relationship="Self.FK_tblShares_tblUsers" FromRole="tblUsers" ToRole="tblShares" />
+    <NavigationProperty Name="tblSharesComment" Relationship="Self.FK_tblSharesComment_tblUsers" FromRole="tblUsers" ToRole="tblSharesComment" />
+    <NavigationProperty Name="tblSharesLike" Relationship="Self.FK_tblSharesLike_tblUsers" FromRole="tblUsers" ToRole="tblSharesLike" />
+    <NavigationProperty Name="tblSharesLike1" Relationship="Self.FK_tblSharesLike_tblUsers1" FromRole="tblUsers" ToRole="tblSharesLike" />
+    <NavigationProperty Name="tblSkillsValidation" Relationship="Self.FK_tblSkillsValidation_tblUsers" FromRole="tblUsers" ToRole="tblSkillsValidation" />
+    <NavigationProperty Name="tblUserLanguages" Relationship="Self.FK_tblUserLanguages_tblUsers" FromRole="tblUsers" ToRole="tblUserLanguages" />
+    <NavigationProperty Name="tblUserType" Relationship="Self.FK_tblUsers_tblUserType" FromRole="tblUsers" ToRole="tblUserType" />
+    <NavigationProperty Name="tblUsersCourses" Relationship="Self.FK_tblUsersCourses_tblUsers" FromRole="tblUsers" ToRole="tblUsersCourses" />
+    <NavigationProperty Name="tblUserSkills" Relationship="Self.FK_tblUserSkills_tblUsers1" FromRole="tblUsers" ToRole="tblUserSkills" />
+  </EntityType>
+  <EntityType Name="tblUsersCourses">
+    <Key>
+      <PropertyRef Name="UserCoursesID" />
+    </Key>
+    <Property Name="UserCoursesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="CourseID" Type="Int32" Nullable="false" />
+    <Property Name="BoughtDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="tblCourses" Relationship="Self.FK_tblUsersCourses_tblCourses" FromRole="tblUsersCourses" ToRole="tblCourses" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblUsersCourses_tblUsers" FromRole="tblUsersCourses" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblUserSkills">
+    <Key>
+      <PropertyRef Name="UserSkillsID" />
+    </Key>
+    <Property Name="UserSkillsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SkilsDetailsID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblSkillsValidation" Relationship="Self.FK_tblSkillsValidation_tblUserSkills" FromRole="tblUserSkills" ToRole="tblSkillsValidation" />
+    <NavigationProperty Name="tblSkilsDetails" Relationship="Self.FK_tblUserSkills_tblSkilsDetails" FromRole="tblUserSkills" ToRole="tblSkilsDetails" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblUserSkills_tblUsers1" FromRole="tblUserSkills" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblUserType">
+    <Key>
+      <PropertyRef Name="UserTypeID" />
+    </Key>
+    <Property Name="UserTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserTypeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblUsers_tblUserType" FromRole="tblUserType" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblWorks">
+    <Key>
+      <PropertyRef Name="WorkID" />
+    </Key>
+    <Property Name="WorkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonelJobName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PersonelJobStartDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PersonelJobFinishDate" Type="DateTime" Precision="0" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="WorksPositionID" Type="Int32" Nullable="false" />
+    <Property Name="WorksActive" Type="Boolean" />
+    <NavigationProperty Name="tblOldProject" Relationship="Self.FK_tblOldProject_tblWorks" FromRole="tblWorks" ToRole="tblOldProject" />
+    <NavigationProperty Name="tblWorksPosition" Relationship="Self.FK_tblWorks_tblWorksPosition" FromRole="tblWorks" ToRole="tblWorksPosition" />
+  </EntityType>
+  <EntityType Name="tblWorksPosition">
+    <Key>
+      <PropertyRef Name="WorksPositionID" />
+    </Key>
+    <Property Name="WorksPositionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WorksPositionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblJobs" Relationship="Self.FK_tblJobs_tblWorksPosition" FromRole="tblWorksPosition" ToRole="tblJobs" />
+    <NavigationProperty Name="tblWorks" Relationship="Self.FK_tblWorks_tblWorksPosition" FromRole="tblWorksPosition" ToRole="tblWorks" />
+  </EntityType>
+  <Association Name="FK_tblCategory_tblCategory">
+    <End Role="tblCategory" Type="Self.tblCategory" Multiplicity="0..1" />
+    <End Role="tblCategory1" Type="Self.tblCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCategory">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="tblCategory1">
+        <PropertyRef Name="ParentCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCourses_tblCategory">
+    <End Role="tblCategory" Type="Self.tblCategory" Multiplicity="1" />
+    <End Role="tblCourses" Type="Self.tblCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCategory">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="tblCourses">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCompanies_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblCompanies" Type="Self.tblCompanies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblCompanies">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJobs_tblCompanies">
+    <End Role="tblCompanies" Type="Self.tblCompanies" Multiplicity="1" />
+    <End Role="tblJobs" Type="Self.tblJobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCompanies">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="tblJobs">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProjectAds_tblCompanies">
+    <End Role="tblCompanies" Type="Self.tblCompanies" Multiplicity="1" />
+    <End Role="tblProjectAds" Type="Self.tblProjectAds" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCompanies">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="tblProjectAds">
+        <PropertyRef Name="ProjectSenderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProjectApplications_tblCompanies">
+    <End Role="tblCompanies" Type="Self.tblCompanies" Multiplicity="1" />
+    <End Role="tblProjectApplications" Type="Self.tblProjectApplications" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tblCompanies">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="tblProjectApplications">
+        <PropertyRef Name="ProjectApplicationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblConferenceCourses_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblConferenceCourses" Type="Self.tblConferenceCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblConferenceCourses">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbltblProvinces_tblCountries">
+    <End Role="tblCountries" Type="Self.tblCountries" Multiplicity="1" />
+    <End Role="tblProvinces" Type="Self.tblProvinces" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCountries">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="tblProvinces">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUniversities_tblCountries">
+    <End Role="tblCountries" Type="Self.tblCountries" Multiplicity="1" />
+    <End Role="tblUniversities" Type="Self.tblUniversities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCountries">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="tblUniversities">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCourseComment_tblCourseComment">
+    <End Role="tblCourseComment" Type="Self.tblCourseComment" Multiplicity="1" />
+    <End Role="tblCourseComment1" Type="Self.tblCourseComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourseComment">
+        <PropertyRef Name="CourseCommentID" />
+      </Principal>
+      <Dependent Role="tblCourseComment1">
+        <PropertyRef Name="AnsweredCommentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCourseComment_tblCourseCommentStatus">
+    <End Role="tblCourseCommentStatus" Type="Self.tblCourseCommentStatus" Multiplicity="1" />
+    <End Role="tblCourseComment" Type="Self.tblCourseComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourseCommentStatus">
+        <PropertyRef Name="CourseCommentStatusID" />
+      </Principal>
+      <Dependent Role="tblCourseComment">
+        <PropertyRef Name="CourseCommentStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCourseComment_tblCourses">
+    <End Role="tblCourses" Type="Self.tblCourses" Multiplicity="1" />
+    <End Role="tblCourseComment" Type="Self.tblCourseComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourses">
+        <PropertyRef Name="CourseID" />
+      </Principal>
+      <Dependent Role="tblCourseComment">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCourseComment_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblCourseComment" Type="Self.tblCourseComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblCourseComment">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCourseKeywords_tblCourseKeyword">
+    <End Role="tblCourseKeyword" Type="Self.tblCourseKeyword" Multiplicity="0..1" />
+    <End Role="tblCourseKeywords" Type="Self.tblCourseKeywords" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourseKeyword">
+        <PropertyRef Name="CourseKeywordID" />
+      </Principal>
+      <Dependent Role="tblCourseKeywords">
+        <PropertyRef Name="CourseKeywordID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCourseKeywords_tblCourses">
+    <End Role="tblCourses" Type="Self.tblCourses" Multiplicity="0..1" />
+    <End Role="tblCourseKeywords" Type="Self.tblCourseKeywords" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourses">
+        <PropertyRef Name="CourseID" />
+      </Principal>
+      <Dependent Role="tblCourseKeywords">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCourses_tblCourseLevel">
+    <End Role="tblCourseLevel" Type="Self.tblCourseLevel" Multiplicity="1" />
+    <End Role="tblCourses" Type="Self.tblCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourseLevel">
+        <PropertyRef Name="CourseLevelID" />
+      </Principal>
+      <Dependent Role="tblCourses">
+        <PropertyRef Name="CourseLevelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCourseRate_tblCourses">
+    <End Role="tblCourses" Type="Self.tblCourses" Multiplicity="1" />
+    <End Role="tblCourseRate" Type="Self.tblCourseRate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourses">
+        <PropertyRef Name="CourseID" />
+      </Principal>
+      <Dependent Role="tblCourseRate">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCourseRate_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblCourseRate" Type="Self.tblCourseRate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblCourseRate">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCourses_tblCourseStatus">
+    <End Role="tblCourseStatus" Type="Self.tblCourseStatus" Multiplicity="1" />
+    <End Role="tblCourses" Type="Self.tblCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourseStatus">
+        <PropertyRef Name="CourseStatusID" />
+      </Principal>
+      <Dependent Role="tblCourses">
+        <PropertyRef Name="CourseStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLesson_tblCourses">
+    <End Role="tblCourses" Type="Self.tblCourses" Multiplicity="1" />
+    <End Role="tblLesson" Type="Self.tblLesson" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourses">
+        <PropertyRef Name="CourseID" />
+      </Principal>
+      <Dependent Role="tblLesson">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUsersCourses_tblCourses">
+    <End Role="tblCourses" Type="Self.tblCourses" Multiplicity="1" />
+    <End Role="tblUsersCourses" Type="Self.tblUsersCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourses">
+        <PropertyRef Name="CourseID" />
+      </Principal>
+      <Dependent Role="tblUsersCourses">
+        <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJobsDepartment_tblDepartments">
+    <End Role="tblDepartments" Type="Self.tblDepartments" Multiplicity="0..1" />
+    <End Role="tblJobsDepartment" Type="Self.tblJobsDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDepartments">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="tblJobsDepartment">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJobsDisabled_tblDisabledStatus">
+    <End Role="tblDisabledStatus" Type="Self.tblDisabledStatus" Multiplicity="1" />
+    <End Role="tblJobsDisabled" Type="Self.tblJobsDisabled" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDisabledStatus">
+        <PropertyRef Name="DisabledID" />
+      </Principal>
+      <Dependent Role="tblJobsDisabled">
+        <PropertyRef Name="DisabledID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProfiles_tblDisabledStatus">
+    <End Role="tblDisabledStatus" Type="Self.tblDisabledStatus" Multiplicity="0..1" />
+    <End Role="tblProfiles" Type="Self.tblProfiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDisabledStatus">
+        <PropertyRef Name="DisabledID" />
+      </Principal>
+      <Dependent Role="tblProfiles">
+        <PropertyRef Name="DisabledID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblDistricts_tbltblProvinces">
+    <End Role="tblProvinces" Type="Self.tblProvinces" Multiplicity="1" />
+    <End Role="tblDistricts" Type="Self.tblDistricts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProvinces">
+        <PropertyRef Name="ProvinceID" />
+      </Principal>
+      <Dependent Role="tblDistricts">
+        <PropertyRef Name="ProvinceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJobs_tblDistricts">
+    <End Role="tblDistricts" Type="Self.tblDistricts" Multiplicity="1" />
+    <End Role="tblJobs" Type="Self.tblJobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDistricts">
+        <PropertyRef Name="DistrictID" />
+      </Principal>
+      <Dependent Role="tblJobs">
+        <PropertyRef Name="DistrictID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProfiles_tblDistricts">
+    <End Role="tblDistricts" Type="Self.tblDistricts" Multiplicity="0..1" />
+    <End Role="tblProfiles" Type="Self.tblProfiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDistricts">
+        <PropertyRef Name="DistrictID" />
+      </Principal>
+      <Dependent Role="tblProfiles">
+        <PropertyRef Name="DistrictID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblFaculties_tblUniversities">
+    <End Role="tblUniversities" Type="Self.tblUniversities" Multiplicity="1" />
+    <End Role="tblFaculties" Type="Self.tblFaculties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUniversities">
+        <PropertyRef Name="UniversityID" />
+      </Principal>
+      <Dependent Role="tblFaculties">
+        <PropertyRef Name="UniversityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSections_tblFaculties">
+    <End Role="tblFaculties" Type="Self.tblFaculties" Multiplicity="1" />
+    <End Role="tblSections" Type="Self.tblSections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFaculties">
+        <PropertyRef Name="FacultyID" />
+      </Principal>
+      <Dependent Role="tblSections">
+        <PropertyRef Name="FacultyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblFollowing_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblFollowing" Type="Self.tblFollowing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblFollowing">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNotifications_tblFollowing">
+    <End Role="tblFollowing" Type="Self.tblFollowing" Multiplicity="0..1" />
+    <End Role="tblNotifications" Type="Self.tblNotifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFollowing">
+        <PropertyRef Name="FollowingID" />
+      </Principal>
+      <Dependent Role="tblNotifications">
+        <PropertyRef Name="FollowingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblFollowRequest_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblFollowRequest" Type="Self.tblFollowRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblFollowRequest">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNotifications_tblFollowRequest">
+    <End Role="tblFollowRequest" Type="Self.tblFollowRequest" Multiplicity="0..1" />
+    <End Role="tblNotifications" Type="Self.tblNotifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFollowRequest">
+        <PropertyRef Name="FollowRequestID" />
+      </Principal>
+      <Dependent Role="tblNotifications">
+        <PropertyRef Name="FollowRequestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserLanguages_tblForeignLanguages">
+    <End Role="tblForeignLanguages" Type="Self.tblForeignLanguages" Multiplicity="1" />
+    <End Role="tblUserLanguages" Type="Self.tblUserLanguages" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tblForeignLanguages">
+        <PropertyRef Name="ForeignLanguageID" />
+      </Principal>
+      <Dependent Role="tblUserLanguages">
+        <PropertyRef Name="UserLanguageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblHobbies_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblHobbies" Type="Self.tblHobbies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblHobbies">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblInterView_tblJobs">
+    <End Role="tblJobs" Type="Self.tblJobs" Multiplicity="0..1" />
+    <End Role="tblInterView" Type="Self.tblInterView" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblJobs">
+        <PropertyRef Name="JobID" />
+      </Principal>
+      <Dependent Role="tblInterView">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblInterViewAnswers_tblInterView">
+    <End Role="tblInterView" Type="Self.tblInterView" Multiplicity="0..1" />
+    <End Role="tblInterViewAnswers" Type="Self.tblInterViewAnswers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblInterView">
+        <PropertyRef Name="InterviewID" />
+      </Principal>
+      <Dependent Role="tblInterViewAnswers">
+        <PropertyRef Name="InterviewID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblInterViewAnswers_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+    <End Role="tblInterViewAnswers" Type="Self.tblInterViewAnswers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblInterViewAnswers">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJobApplications_tblJobs">
+    <End Role="tblJobs" Type="Self.tblJobs" Multiplicity="1" />
+    <End Role="tblJobApplications" Type="Self.tblJobApplications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblJobs">
+        <PropertyRef Name="JobID" />
+      </Principal>
+      <Dependent Role="tblJobApplications">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJobApplications_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblJobApplications" Type="Self.tblJobApplications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblJobApplications">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJobOperationType_tblJobs">
+    <End Role="tblJobs" Type="Self.tblJobs" Multiplicity="1" />
+    <End Role="tblJobOperationType" Type="Self.tblJobOperationType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblJobs">
+        <PropertyRef Name="JobID" />
+      </Principal>
+      <Dependent Role="tblJobOperationType">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJobOperationType_tblOperationType">
+    <End Role="tblOperationType" Type="Self.tblOperationType" Multiplicity="1" />
+    <End Role="tblJobOperationType" Type="Self.tblJobOperationType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblOperationType">
+        <PropertyRef Name="OperationTypeID" />
+      </Principal>
+      <Dependent Role="tblJobOperationType">
+        <PropertyRef Name="OperationTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJobs_tblSectors">
+    <End Role="tblSectors" Type="Self.tblSectors" Multiplicity="1" />
+    <End Role="tblJobs" Type="Self.tblJobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSectors">
+        <PropertyRef Name="SectorID" />
+      </Principal>
+      <Dependent Role="tblJobs">
+        <PropertyRef Name="SectorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJobs_tblWorksPosition">
+    <End Role="tblWorksPosition" Type="Self.tblWorksPosition" Multiplicity="1" />
+    <End Role="tblJobs" Type="Self.tblJobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblWorksPosition">
+        <PropertyRef Name="WorksPositionID" />
+      </Principal>
+      <Dependent Role="tblJobs">
+        <PropertyRef Name="WorksPositionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJobsDepartment_tblJobs">
+    <End Role="tblJobs" Type="Self.tblJobs" Multiplicity="0..1" />
+    <End Role="tblJobsDepartment" Type="Self.tblJobsDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblJobs">
+        <PropertyRef Name="JobID" />
+      </Principal>
+      <Dependent Role="tblJobsDepartment">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJobsDisabled_tblJobs">
+    <End Role="tblJobs" Type="Self.tblJobs" Multiplicity="1" />
+    <End Role="tblJobsDisabled" Type="Self.tblJobsDisabled" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblJobs">
+        <PropertyRef Name="JobID" />
+      </Principal>
+      <Dependent Role="tblJobsDisabled">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJobsSkils_tblJobs">
+    <End Role="tblJobs" Type="Self.tblJobs" Multiplicity="1" />
+    <End Role="tblJobsSkils" Type="Self.tblJobsSkils" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblJobs">
+        <PropertyRef Name="JobID" />
+      </Principal>
+      <Dependent Role="tblJobsSkils">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJonsEducationLevel_tblJobs">
+    <End Role="tblJobs" Type="Self.tblJobs" Multiplicity="1" />
+    <End Role="tblJobsEducationLevel" Type="Self.tblJobsEducationLevel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblJobs">
+        <PropertyRef Name="JobID" />
+      </Principal>
+      <Dependent Role="tblJobsEducationLevel">
+        <PropertyRef Name="JobID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJonsEducationLevel_tblEducationType">
+    <End Role="tblPersonelEducationType" Type="Self.tblPersonelEducationType" Multiplicity="1" />
+    <End Role="tblJobsEducationLevel" Type="Self.tblJobsEducationLevel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPersonelEducationType">
+        <PropertyRef Name="PersonelEducationTypeID" />
+      </Principal>
+      <Dependent Role="tblJobsEducationLevel">
+        <PropertyRef Name="EducationTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblJobsSkils_tblSkilsDetails">
+    <End Role="tblSkilsDetails" Type="Self.tblSkilsDetails" Multiplicity="1" />
+    <End Role="tblJobsSkils" Type="Self.tblJobsSkils" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSkilsDetails">
+        <PropertyRef Name="SkilsDetailsID" />
+      </Principal>
+      <Dependent Role="tblJobsSkils">
+        <PropertyRef Name="SkilsDetailsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblMessages_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblMessages" Type="Self.tblMessages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblMessages">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNotifications_tblProjectApplications">
+    <End Role="tblProjectApplications" Type="Self.tblProjectApplications" Multiplicity="0..1" />
+    <End Role="tblNotifications" Type="Self.tblNotifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProjectApplications">
+        <PropertyRef Name="ProjectApplicationID" />
+      </Principal>
+      <Dependent Role="tblNotifications">
+        <PropertyRef Name="ProjectApplicationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNotifications_tblQuestionAnswers">
+    <End Role="tblQuestionAnswers" Type="Self.tblQuestionAnswers" Multiplicity="0..1" />
+    <End Role="tblNotifications" Type="Self.tblNotifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuestionAnswers">
+        <PropertyRef Name="QuestionAnserwsID" />
+      </Principal>
+      <Dependent Role="tblNotifications">
+        <PropertyRef Name="QuestionAnserwsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNotifications_tblQuestionAnwersAndDislike">
+    <End Role="tblQuestionAnwersAndDislike" Type="Self.tblQuestionAnwersAndDislike" Multiplicity="0..1" />
+    <End Role="tblNotifications" Type="Self.tblNotifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuestionAnwersAndDislike">
+        <PropertyRef Name="QuestionAnwersAndDislikeID" />
+      </Principal>
+      <Dependent Role="tblNotifications">
+        <PropertyRef Name="QuestionAnwersAndDislikeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNotifications_tblQuestionLikeAndDislike">
+    <End Role="tblQuestionLikeAndDislike" Type="Self.tblQuestionLikeAndDislike" Multiplicity="0..1" />
+    <End Role="tblNotifications" Type="Self.tblNotifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuestionLikeAndDislike">
+        <PropertyRef Name="QuestionLikeAndDislikeID" />
+      </Principal>
+      <Dependent Role="tblNotifications">
+        <PropertyRef Name="QuestionLikeAndDislikeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNotifications_tblSharesComment">
+    <End Role="tblSharesComment" Type="Self.tblSharesComment" Multiplicity="0..1" />
+    <End Role="tblNotifications" Type="Self.tblNotifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSharesComment">
+        <PropertyRef Name="SharesCommentID" />
+      </Principal>
+      <Dependent Role="tblNotifications">
+        <PropertyRef Name="SharesCommentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNotifications_tblSharesLike">
+    <End Role="tblSharesLike" Type="Self.tblSharesLike" Multiplicity="0..1" />
+    <End Role="tblNotifications" Type="Self.tblNotifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSharesLike">
+        <PropertyRef Name="SharesLikeID" />
+      </Principal>
+      <Dependent Role="tblNotifications">
+        <PropertyRef Name="SharesLikeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNotifications_tblSkillsValidation">
+    <End Role="tblSkillsValidation" Type="Self.tblSkillsValidation" Multiplicity="0..1" />
+    <End Role="tblNotifications" Type="Self.tblNotifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSkillsValidation">
+        <PropertyRef Name="SkillsValidationID" />
+      </Principal>
+      <Dependent Role="tblNotifications">
+        <PropertyRef Name="SkillsValidationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNotifications_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblNotifications" Type="Self.tblNotifications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblNotifications">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblOldProject_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblOldProject" Type="Self.tblOldProject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblOldProject">
+        <PropertyRef Name="UsersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblOldProject_tblWorks">
+    <End Role="tblWorks" Type="Self.tblWorks" Multiplicity="0..1" />
+    <End Role="tblOldProject" Type="Self.tblOldProject" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblWorks">
+        <PropertyRef Name="WorkID" />
+      </Principal>
+      <Dependent Role="tblOldProject">
+        <PropertyRef Name="WorksID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEducation_tblEducationType">
+    <End Role="tblPersonelEducationType" Type="Self.tblPersonelEducationType" Multiplicity="1" />
+    <End Role="tblPersonelEducation" Type="Self.tblPersonelEducation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPersonelEducationType">
+        <PropertyRef Name="PersonelEducationTypeID" />
+      </Principal>
+      <Dependent Role="tblPersonelEducation">
+        <PropertyRef Name="PersonelEducationTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEducation_tblSections">
+    <End Role="tblSections" Type="Self.tblSections" Multiplicity="1" />
+    <End Role="tblPersonelEducation" Type="Self.tblPersonelEducation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSections">
+        <PropertyRef Name="SectionID" />
+      </Principal>
+      <Dependent Role="tblPersonelEducation">
+        <PropertyRef Name="SectionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEducation_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblPersonelEducation" Type="Self.tblPersonelEducation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblPersonelEducation">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProfiles_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblProfiles" Type="Self.tblProfiles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblProfiles">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProjectAds_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblProjectAds" Type="Self.tblProjectAds" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblProjectAds">
+        <PropertyRef Name="ProjectSenderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProjectApplications_tblProjectAds">
+    <End Role="tblProjectAds" Type="Self.tblProjectAds" Multiplicity="1" />
+    <End Role="tblProjectApplications" Type="Self.tblProjectApplications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProjectAds">
+        <PropertyRef Name="ProjectAwardID" />
+      </Principal>
+      <Dependent Role="tblProjectApplications">
+        <PropertyRef Name="ProjectAwardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblProjectApplications_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblProjectApplications" Type="Self.tblProjectApplications" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblProjectApplications">
+        <PropertyRef Name="ProjectApplicationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAnswers_tblQuestions">
+    <End Role="tblQuestions" Type="Self.tblQuestions" Multiplicity="1" />
+    <End Role="tblQuestionAnswers" Type="Self.tblQuestionAnswers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuestions">
+        <PropertyRef Name="QuestionID" />
+      </Principal>
+      <Dependent Role="tblQuestionAnswers">
+        <PropertyRef Name="QuestionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAnswers_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblQuestionAnswers" Type="Self.tblQuestionAnswers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblQuestionAnswers">
+        <PropertyRef Name="AnswerUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblQuestionAnwersAndDislike_tblQuestionAnswers">
+    <End Role="tblQuestionAnswers" Type="Self.tblQuestionAnswers" Multiplicity="1" />
+    <End Role="tblQuestionAnwersAndDislike" Type="Self.tblQuestionAnwersAndDislike" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuestionAnswers">
+        <PropertyRef Name="QuestionAnserwsID" />
+      </Principal>
+      <Dependent Role="tblQuestionAnwersAndDislike">
+        <PropertyRef Name="QuestionAnserwsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblQuestionAnwersAndDislike_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblQuestionAnwersAndDislike" Type="Self.tblQuestionAnwersAndDislike" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblQuestionAnwersAndDislike">
+        <PropertyRef Name="UsersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblQuestions_tblThreads">
+    <End Role="tblQuestionAreaType" Type="Self.tblQuestionAreaType" Multiplicity="1" />
+    <End Role="tblQuestions" Type="Self.tblQuestions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuestionAreaType">
+        <PropertyRef Name="SubjectID" />
+      </Principal>
+      <Dependent Role="tblQuestions">
+        <PropertyRef Name="SubjectID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblThreads_tblAreas">
+    <End Role="tblQuestionsAreas" Type="Self.tblQuestionsAreas" Multiplicity="1" />
+    <End Role="tblQuestionAreaType" Type="Self.tblQuestionAreaType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuestionsAreas">
+        <PropertyRef Name="OuestionAreaID" />
+      </Principal>
+      <Dependent Role="tblQuestionAreaType">
+        <PropertyRef Name="AreaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblQuestionLikeAndDislike_tblQuestions">
+    <End Role="tblQuestions" Type="Self.tblQuestions" Multiplicity="1" />
+    <End Role="tblQuestionLikeAndDislike" Type="Self.tblQuestionLikeAndDislike" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuestions">
+        <PropertyRef Name="QuestionID" />
+      </Principal>
+      <Dependent Role="tblQuestionLikeAndDislike">
+        <PropertyRef Name="QuestionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblQuestionLikeAndDislike_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblQuestionLikeAndDislike" Type="Self.tblQuestionLikeAndDislike" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblQuestionLikeAndDislike">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tags_tblQuestions">
+    <End Role="tblQuestions" Type="Self.tblQuestions" Multiplicity="0..1" />
+    <End Role="tblTags" Type="Self.tblTags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuestions">
+        <PropertyRef Name="QuestionID" />
+      </Principal>
+      <Dependent Role="tblTags">
+        <PropertyRef Name="QuestionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblQuestions_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblQuestions" Type="Self.tblQuestions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblQuestions">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblReferences_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblReferences" Type="Self.tblReferences" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblReferences">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tags_tblShares">
+    <End Role="tblShares" Type="Self.tblShares" Multiplicity="0..1" />
+    <End Role="tblTags" Type="Self.tblTags" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblShares">
+        <PropertyRef Name="SharingID" />
+      </Principal>
+      <Dependent Role="tblTags">
+        <PropertyRef Name="SharingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblShares_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblShares" Type="Self.tblShares" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblShares">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSharesComment_tblShares">
+    <End Role="tblShares" Type="Self.tblShares" Multiplicity="1" />
+    <End Role="tblSharesComment" Type="Self.tblSharesComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblShares">
+        <PropertyRef Name="SharingID" />
+      </Principal>
+      <Dependent Role="tblSharesComment">
+        <PropertyRef Name="SharingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSharesLike_tblShares">
+    <End Role="tblShares" Type="Self.tblShares" Multiplicity="1" />
+    <End Role="tblSharesLike" Type="Self.tblSharesLike" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblShares">
+        <PropertyRef Name="SharingID" />
+      </Principal>
+      <Dependent Role="tblSharesLike">
+        <PropertyRef Name="SharingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSharesLike_tblShares1">
+    <End Role="tblShares" Type="Self.tblShares" Multiplicity="1" />
+    <End Role="tblSharesLike" Type="Self.tblSharesLike" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblShares">
+        <PropertyRef Name="SharingID" />
+      </Principal>
+      <Dependent Role="tblSharesLike">
+        <PropertyRef Name="SharingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSharesComment_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblSharesComment" Type="Self.tblSharesComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblSharesComment">
+        <PropertyRef Name="SharesCommentUsersID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSharesLike_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblSharesLike" Type="Self.tblSharesLike" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblSharesLike">
+        <PropertyRef Name="SharesLikeUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSharesLike_tblUsers1">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblSharesLike" Type="Self.tblSharesLike" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblSharesLike">
+        <PropertyRef Name="SharesLikeUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSkilsDetails_tblSkills">
+    <End Role="tblSkills" Type="Self.tblSkills" Multiplicity="1" />
+    <End Role="tblSkilsDetails" Type="Self.tblSkilsDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSkills">
+        <PropertyRef Name="SkillID" />
+      </Principal>
+      <Dependent Role="tblSkilsDetails">
+        <PropertyRef Name="SkillID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSkillsValidation_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblSkillsValidation" Type="Self.tblSkillsValidation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblSkillsValidation">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSkillsValidation_tblUserSkills">
+    <End Role="tblUserSkills" Type="Self.tblUserSkills" Multiplicity="1" />
+    <End Role="tblSkillsValidation" Type="Self.tblSkillsValidation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUserSkills">
+        <PropertyRef Name="UserSkillsID" />
+      </Principal>
+      <Dependent Role="tblSkillsValidation">
+        <PropertyRef Name="UserSkillsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserSkills_tblSkilsDetails">
+    <End Role="tblSkilsDetails" Type="Self.tblSkilsDetails" Multiplicity="1" />
+    <End Role="tblUserSkills" Type="Self.tblUserSkills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSkilsDetails">
+        <PropertyRef Name="SkilsDetailsID" />
+      </Principal>
+      <Dependent Role="tblUserSkills">
+        <PropertyRef Name="SkilsDetailsID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserLanguages_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblUserLanguages" Type="Self.tblUserLanguages" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblUserLanguages">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUsers_tblUserType">
+    <End Role="tblUserType" Type="Self.tblUserType" Multiplicity="1" />
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUserType">
+        <PropertyRef Name="UserTypeID" />
+      </Principal>
+      <Dependent Role="tblUsers">
+        <PropertyRef Name="UserTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUsersCourses_tblUsers">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblUsersCourses" Type="Self.tblUsersCourses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblUsersCourses">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUserSkills_tblUsers1">
+    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="1" />
+    <End Role="tblUserSkills" Type="Self.tblUserSkills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUsers">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="tblUserSkills">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblWorks_tblWorksPosition">
+    <End Role="tblWorksPosition" Type="Self.tblWorksPosition" Multiplicity="1" />
+    <End Role="tblWorks" Type="Self.tblWorks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblWorksPosition">
+        <PropertyRef Name="WorksPositionID" />
+      </Principal>
+      <Dependent Role="tblWorks">
+        <PropertyRef Name="WorksPositionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DB_A151C9_beritankEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="tblCategory" EntityType="Self.tblCategory" />
+    <EntitySet Name="tblCompanies" EntityType="Self.tblCompanies" />
+    <EntitySet Name="tblConferenceCourses" EntityType="Self.tblConferenceCourses" />
+    <EntitySet Name="tblCountries" EntityType="Self.tblCountries" />
+    <EntitySet Name="tblCourseComment" EntityType="Self.tblCourseComment" />
+    <EntitySet Name="tblCourseCommentStatus" EntityType="Self.tblCourseCommentStatus" />
+    <EntitySet Name="tblCourseKeyword" EntityType="Self.tblCourseKeyword" />
+    <EntitySet Name="tblCourseKeywords" EntityType="Self.tblCourseKeywords" />
+    <EntitySet Name="tblCourseLevel" EntityType="Self.tblCourseLevel" />
+    <EntitySet Name="tblCourseRate" EntityType="Self.tblCourseRate" />
+    <EntitySet Name="tblCourses" EntityType="Self.tblCourses" />
+    <EntitySet Name="tblCourseStatus" EntityType="Self.tblCourseStatus" />
+    <EntitySet Name="tblDepartments" EntityType="Self.tblDepartments" />
+    <EntitySet Name="tblDisabledStatus" EntityType="Self.tblDisabledStatus" />
+    <EntitySet Name="tblDistricts" EntityType="Self.tblDistricts" />
+    <EntitySet Name="tblFaculties" EntityType="Self.tblFaculties" />
+    <EntitySet Name="tblFollowing" EntityType="Self.tblFollowing" />
+    <EntitySet Name="tblFollowRequest" EntityType="Self.tblFollowRequest" />
+    <EntitySet Name="tblForeignLanguages" EntityType="Self.tblForeignLanguages" />
+    <EntitySet Name="tblHobbies" EntityType="Self.tblHobbies" />
+    <EntitySet Name="tblInterView" EntityType="Self.tblInterView" />
+    <EntitySet Name="tblInterViewAnswers" EntityType="Self.tblInterViewAnswers" />
+    <EntitySet Name="tblJobApplications" EntityType="Self.tblJobApplications" />
+    <EntitySet Name="tblJobOperationType" EntityType="Self.tblJobOperationType" />
+    <EntitySet Name="tblJobs" EntityType="Self.tblJobs" />
+    <EntitySet Name="tblJobsDepartment" EntityType="Self.tblJobsDepartment" />
+    <EntitySet Name="tblJobsDisabled" EntityType="Self.tblJobsDisabled" />
+    <EntitySet Name="tblJobsEducationLevel" EntityType="Self.tblJobsEducationLevel" />
+    <EntitySet Name="tblJobsSkils" EntityType="Self.tblJobsSkils" />
+    <EntitySet Name="tblLesson" EntityType="Self.tblLesson" />
+    <EntitySet Name="tblMessages" EntityType="Self.tblMessages" />
+    <EntitySet Name="tblNotifications" EntityType="Self.tblNotifications" />
+    <EntitySet Name="tblOldProject" EntityType="Self.tblOldProject" />
+    <EntitySet Name="tblOperationType" EntityType="Self.tblOperationType" />
+    <EntitySet Name="tblPersonelEducation" EntityType="Self.tblPersonelEducation" />
+    <EntitySet Name="tblPersonelEducationType" EntityType="Self.tblPersonelEducationType" />
+    <EntitySet Name="tblProfiles" EntityType="Self.tblProfiles" />
+    <EntitySet Name="tblProjectAds" EntityType="Self.tblProjectAds" />
+    <EntitySet Name="tblProjectApplications" EntityType="Self.tblProjectApplications" />
+    <EntitySet Name="tblProvinces" EntityType="Self.tblProvinces" />
+    <EntitySet Name="tblQuestionAnswers" EntityType="Self.tblQuestionAnswers" />
+    <EntitySet Name="tblQuestionAnwersAndDislike" EntityType="Self.tblQuestionAnwersAndDislike" />
+    <EntitySet Name="tblQuestionAreaType" EntityType="Self.tblQuestionAreaType" />
+    <EntitySet Name="tblQuestionLikeAndDislike" EntityType="Self.tblQuestionLikeAndDislike" />
+    <EntitySet Name="tblQuestions" EntityType="Self.tblQuestions" />
+    <EntitySet Name="tblQuestionsAreas" EntityType="Self.tblQuestionsAreas" />
+    <EntitySet Name="tblReferences" EntityType="Self.tblReferences" />
+    <EntitySet Name="tblSections" EntityType="Self.tblSections" />
+    <EntitySet Name="tblSectors" EntityType="Self.tblSectors" />
+    <EntitySet Name="tblShares" EntityType="Self.tblShares" />
+    <EntitySet Name="tblSharesComment" EntityType="Self.tblSharesComment" />
+    <EntitySet Name="tblSharesLike" EntityType="Self.tblSharesLike" />
+    <EntitySet Name="tblSkills" EntityType="Self.tblSkills" />
+    <EntitySet Name="tblSkillsValidation" EntityType="Self.tblSkillsValidation" />
+    <EntitySet Name="tblSkilsDetails" EntityType="Self.tblSkilsDetails" />
+    <EntitySet Name="tblTags" EntityType="Self.tblTags" />
+    <EntitySet Name="tblUniversities" EntityType="Self.tblUniversities" />
+    <EntitySet Name="tblUserLanguages" EntityType="Self.tblUserLanguages" />
+    <EntitySet Name="tblUsers" EntityType="Self.tblUsers" />
+    <EntitySet Name="tblUsersCourses" EntityType="Self.tblUsersCourses" />
+    <EntitySet Name="tblUserSkills" EntityType="Self.tblUserSkills" />
+    <EntitySet Name="tblUserType" EntityType="Self.tblUserType" />
+    <EntitySet Name="tblWorks" EntityType="Self.tblWorks" />
+    <EntitySet Name="tblWorksPosition" EntityType="Self.tblWorksPosition" />
+    <AssociationSet Name="FK_tblCategory_tblCategory" Association="Self.FK_tblCategory_tblCategory">
+      <End Role="tblCategory" EntitySet="tblCategory" />
+      <End Role="tblCategory1" EntitySet="tblCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCourses_tblCategory" Association="Self.FK_tblCourses_tblCategory">
+      <End Role="tblCategory" EntitySet="tblCategory" />
+      <End Role="tblCourses" EntitySet="tblCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCompanies_tblUsers" Association="Self.FK_tblCompanies_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblCompanies" EntitySet="tblCompanies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJobs_tblCompanies" Association="Self.FK_tblJobs_tblCompanies">
+      <End Role="tblCompanies" EntitySet="tblCompanies" />
+      <End Role="tblJobs" EntitySet="tblJobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProjectAds_tblCompanies" Association="Self.FK_tblProjectAds_tblCompanies">
+      <End Role="tblCompanies" EntitySet="tblCompanies" />
+      <End Role="tblProjectAds" EntitySet="tblProjectAds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProjectApplications_tblCompanies" Association="Self.FK_tblProjectApplications_tblCompanies">
+      <End Role="tblCompanies" EntitySet="tblCompanies" />
+      <End Role="tblProjectApplications" EntitySet="tblProjectApplications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblConferenceCourses_tblUsers" Association="Self.FK_tblConferenceCourses_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblConferenceCourses" EntitySet="tblConferenceCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbltblProvinces_tblCountries" Association="Self.FK_tbltblProvinces_tblCountries">
+      <End Role="tblCountries" EntitySet="tblCountries" />
+      <End Role="tblProvinces" EntitySet="tblProvinces" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUniversities_tblCountries" Association="Self.FK_tblUniversities_tblCountries">
+      <End Role="tblCountries" EntitySet="tblCountries" />
+      <End Role="tblUniversities" EntitySet="tblUniversities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCourseComment_tblCourseComment" Association="Self.FK_tblCourseComment_tblCourseComment">
+      <End Role="tblCourseComment" EntitySet="tblCourseComment" />
+      <End Role="tblCourseComment1" EntitySet="tblCourseComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCourseComment_tblCourseCommentStatus" Association="Self.FK_tblCourseComment_tblCourseCommentStatus">
+      <End Role="tblCourseCommentStatus" EntitySet="tblCourseCommentStatus" />
+      <End Role="tblCourseComment" EntitySet="tblCourseComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCourseComment_tblCourses" Association="Self.FK_tblCourseComment_tblCourses">
+      <End Role="tblCourses" EntitySet="tblCourses" />
+      <End Role="tblCourseComment" EntitySet="tblCourseComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCourseComment_tblUsers" Association="Self.FK_tblCourseComment_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblCourseComment" EntitySet="tblCourseComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCourseKeywords_tblCourseKeyword" Association="Self.FK_tblCourseKeywords_tblCourseKeyword">
+      <End Role="tblCourseKeyword" EntitySet="tblCourseKeyword" />
+      <End Role="tblCourseKeywords" EntitySet="tblCourseKeywords" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCourseKeywords_tblCourses" Association="Self.FK_tblCourseKeywords_tblCourses">
+      <End Role="tblCourses" EntitySet="tblCourses" />
+      <End Role="tblCourseKeywords" EntitySet="tblCourseKeywords" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCourses_tblCourseLevel" Association="Self.FK_tblCourses_tblCourseLevel">
+      <End Role="tblCourseLevel" EntitySet="tblCourseLevel" />
+      <End Role="tblCourses" EntitySet="tblCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCourseRate_tblCourses" Association="Self.FK_tblCourseRate_tblCourses">
+      <End Role="tblCourses" EntitySet="tblCourses" />
+      <End Role="tblCourseRate" EntitySet="tblCourseRate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCourseRate_tblUsers" Association="Self.FK_tblCourseRate_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblCourseRate" EntitySet="tblCourseRate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCourses_tblCourseStatus" Association="Self.FK_tblCourses_tblCourseStatus">
+      <End Role="tblCourseStatus" EntitySet="tblCourseStatus" />
+      <End Role="tblCourses" EntitySet="tblCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLesson_tblCourses" Association="Self.FK_tblLesson_tblCourses">
+      <End Role="tblCourses" EntitySet="tblCourses" />
+      <End Role="tblLesson" EntitySet="tblLesson" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUsersCourses_tblCourses" Association="Self.FK_tblUsersCourses_tblCourses">
+      <End Role="tblCourses" EntitySet="tblCourses" />
+      <End Role="tblUsersCourses" EntitySet="tblUsersCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJobsDepartment_tblDepartments" Association="Self.FK_tblJobsDepartment_tblDepartments">
+      <End Role="tblDepartments" EntitySet="tblDepartments" />
+      <End Role="tblJobsDepartment" EntitySet="tblJobsDepartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJobsDisabled_tblDisabledStatus" Association="Self.FK_tblJobsDisabled_tblDisabledStatus">
+      <End Role="tblDisabledStatus" EntitySet="tblDisabledStatus" />
+      <End Role="tblJobsDisabled" EntitySet="tblJobsDisabled" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProfiles_tblDisabledStatus" Association="Self.FK_tblProfiles_tblDisabledStatus">
+      <End Role="tblDisabledStatus" EntitySet="tblDisabledStatus" />
+      <End Role="tblProfiles" EntitySet="tblProfiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblDistricts_tbltblProvinces" Association="Self.FK_tblDistricts_tbltblProvinces">
+      <End Role="tblProvinces" EntitySet="tblProvinces" />
+      <End Role="tblDistricts" EntitySet="tblDistricts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJobs_tblDistricts" Association="Self.FK_tblJobs_tblDistricts">
+      <End Role="tblDistricts" EntitySet="tblDistricts" />
+      <End Role="tblJobs" EntitySet="tblJobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProfiles_tblDistricts" Association="Self.FK_tblProfiles_tblDistricts">
+      <End Role="tblDistricts" EntitySet="tblDistricts" />
+      <End Role="tblProfiles" EntitySet="tblProfiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblFaculties_tblUniversities" Association="Self.FK_tblFaculties_tblUniversities">
+      <End Role="tblUniversities" EntitySet="tblUniversities" />
+      <End Role="tblFaculties" EntitySet="tblFaculties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSections_tblFaculties" Association="Self.FK_tblSections_tblFaculties">
+      <End Role="tblFaculties" EntitySet="tblFaculties" />
+      <End Role="tblSections" EntitySet="tblSections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblFollowing_tblUsers" Association="Self.FK_tblFollowing_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblFollowing" EntitySet="tblFollowing" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNotifications_tblFollowing" Association="Self.FK_tblNotifications_tblFollowing">
+      <End Role="tblFollowing" EntitySet="tblFollowing" />
+      <End Role="tblNotifications" EntitySet="tblNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblFollowRequest_tblUsers" Association="Self.FK_tblFollowRequest_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblFollowRequest" EntitySet="tblFollowRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNotifications_tblFollowRequest" Association="Self.FK_tblNotifications_tblFollowRequest">
+      <End Role="tblFollowRequest" EntitySet="tblFollowRequest" />
+      <End Role="tblNotifications" EntitySet="tblNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserLanguages_tblForeignLanguages" Association="Self.FK_tblUserLanguages_tblForeignLanguages">
+      <End Role="tblForeignLanguages" EntitySet="tblForeignLanguages" />
+      <End Role="tblUserLanguages" EntitySet="tblUserLanguages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblHobbies_tblUsers" Association="Self.FK_tblHobbies_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblHobbies" EntitySet="tblHobbies" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblInterView_tblJobs" Association="Self.FK_tblInterView_tblJobs">
+      <End Role="tblJobs" EntitySet="tblJobs" />
+      <End Role="tblInterView" EntitySet="tblInterView" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblInterViewAnswers_tblInterView" Association="Self.FK_tblInterViewAnswers_tblInterView">
+      <End Role="tblInterView" EntitySet="tblInterView" />
+      <End Role="tblInterViewAnswers" EntitySet="tblInterViewAnswers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblInterViewAnswers_tblUsers" Association="Self.FK_tblInterViewAnswers_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblInterViewAnswers" EntitySet="tblInterViewAnswers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJobApplications_tblJobs" Association="Self.FK_tblJobApplications_tblJobs">
+      <End Role="tblJobs" EntitySet="tblJobs" />
+      <End Role="tblJobApplications" EntitySet="tblJobApplications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJobApplications_tblUsers" Association="Self.FK_tblJobApplications_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblJobApplications" EntitySet="tblJobApplications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJobOperationType_tblJobs" Association="Self.FK_tblJobOperationType_tblJobs">
+      <End Role="tblJobs" EntitySet="tblJobs" />
+      <End Role="tblJobOperationType" EntitySet="tblJobOperationType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJobOperationType_tblOperationType" Association="Self.FK_tblJobOperationType_tblOperationType">
+      <End Role="tblOperationType" EntitySet="tblOperationType" />
+      <End Role="tblJobOperationType" EntitySet="tblJobOperationType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJobs_tblSectors" Association="Self.FK_tblJobs_tblSectors">
+      <End Role="tblSectors" EntitySet="tblSectors" />
+      <End Role="tblJobs" EntitySet="tblJobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJobs_tblWorksPosition" Association="Self.FK_tblJobs_tblWorksPosition">
+      <End Role="tblWorksPosition" EntitySet="tblWorksPosition" />
+      <End Role="tblJobs" EntitySet="tblJobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJobsDepartment_tblJobs" Association="Self.FK_tblJobsDepartment_tblJobs">
+      <End Role="tblJobs" EntitySet="tblJobs" />
+      <End Role="tblJobsDepartment" EntitySet="tblJobsDepartment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJobsDisabled_tblJobs" Association="Self.FK_tblJobsDisabled_tblJobs">
+      <End Role="tblJobs" EntitySet="tblJobs" />
+      <End Role="tblJobsDisabled" EntitySet="tblJobsDisabled" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJobsSkils_tblJobs" Association="Self.FK_tblJobsSkils_tblJobs">
+      <End Role="tblJobs" EntitySet="tblJobs" />
+      <End Role="tblJobsSkils" EntitySet="tblJobsSkils" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJonsEducationLevel_tblJobs" Association="Self.FK_tblJonsEducationLevel_tblJobs">
+      <End Role="tblJobs" EntitySet="tblJobs" />
+      <End Role="tblJobsEducationLevel" EntitySet="tblJobsEducationLevel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJonsEducationLevel_tblEducationType" Association="Self.FK_tblJonsEducationLevel_tblEducationType">
+      <End Role="tblPersonelEducationType" EntitySet="tblPersonelEducationType" />
+      <End Role="tblJobsEducationLevel" EntitySet="tblJobsEducationLevel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblJobsSkils_tblSkilsDetails" Association="Self.FK_tblJobsSkils_tblSkilsDetails">
+      <End Role="tblSkilsDetails" EntitySet="tblSkilsDetails" />
+      <End Role="tblJobsSkils" EntitySet="tblJobsSkils" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblMessages_tblUsers" Association="Self.FK_tblMessages_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblMessages" EntitySet="tblMessages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNotifications_tblProjectApplications" Association="Self.FK_tblNotifications_tblProjectApplications">
+      <End Role="tblProjectApplications" EntitySet="tblProjectApplications" />
+      <End Role="tblNotifications" EntitySet="tblNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNotifications_tblQuestionAnswers" Association="Self.FK_tblNotifications_tblQuestionAnswers">
+      <End Role="tblQuestionAnswers" EntitySet="tblQuestionAnswers" />
+      <End Role="tblNotifications" EntitySet="tblNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNotifications_tblQuestionAnwersAndDislike" Association="Self.FK_tblNotifications_tblQuestionAnwersAndDislike">
+      <End Role="tblQuestionAnwersAndDislike" EntitySet="tblQuestionAnwersAndDislike" />
+      <End Role="tblNotifications" EntitySet="tblNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNotifications_tblQuestionLikeAndDislike" Association="Self.FK_tblNotifications_tblQuestionLikeAndDislike">
+      <End Role="tblQuestionLikeAndDislike" EntitySet="tblQuestionLikeAndDislike" />
+      <End Role="tblNotifications" EntitySet="tblNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNotifications_tblSharesComment" Association="Self.FK_tblNotifications_tblSharesComment">
+      <End Role="tblSharesComment" EntitySet="tblSharesComment" />
+      <End Role="tblNotifications" EntitySet="tblNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNotifications_tblSharesLike" Association="Self.FK_tblNotifications_tblSharesLike">
+      <End Role="tblSharesLike" EntitySet="tblSharesLike" />
+      <End Role="tblNotifications" EntitySet="tblNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNotifications_tblSkillsValidation" Association="Self.FK_tblNotifications_tblSkillsValidation">
+      <End Role="tblSkillsValidation" EntitySet="tblSkillsValidation" />
+      <End Role="tblNotifications" EntitySet="tblNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNotifications_tblUsers" Association="Self.FK_tblNotifications_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblNotifications" EntitySet="tblNotifications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblOldProject_tblUsers" Association="Self.FK_tblOldProject_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblOldProject" EntitySet="tblOldProject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblOldProject_tblWorks" Association="Self.FK_tblOldProject_tblWorks">
+      <End Role="tblWorks" EntitySet="tblWorks" />
+      <End Role="tblOldProject" EntitySet="tblOldProject" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEducation_tblEducationType" Association="Self.FK_tblEducation_tblEducationType">
+      <End Role="tblPersonelEducationType" EntitySet="tblPersonelEducationType" />
+      <End Role="tblPersonelEducation" EntitySet="tblPersonelEducation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEducation_tblSections" Association="Self.FK_tblEducation_tblSections">
+      <End Role="tblSections" EntitySet="tblSections" />
+      <End Role="tblPersonelEducation" EntitySet="tblPersonelEducation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEducation_tblUsers" Association="Self.FK_tblEducation_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblPersonelEducation" EntitySet="tblPersonelEducation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProfiles_tblUsers" Association="Self.FK_tblProfiles_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblProfiles" EntitySet="tblProfiles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProjectAds_tblUsers" Association="Self.FK_tblProjectAds_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblProjectAds" EntitySet="tblProjectAds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProjectApplications_tblProjectAds" Association="Self.FK_tblProjectApplications_tblProjectAds">
+      <End Role="tblProjectAds" EntitySet="tblProjectAds" />
+      <End Role="tblProjectApplications" EntitySet="tblProjectApplications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblProjectApplications_tblUsers" Association="Self.FK_tblProjectApplications_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblProjectApplications" EntitySet="tblProjectApplications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAnswers_tblQuestions" Association="Self.FK_tblAnswers_tblQuestions">
+      <End Role="tblQuestions" EntitySet="tblQuestions" />
+      <End Role="tblQuestionAnswers" EntitySet="tblQuestionAnswers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAnswers_tblUsers" Association="Self.FK_tblAnswers_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblQuestionAnswers" EntitySet="tblQuestionAnswers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblQuestionAnwersAndDislike_tblQuestionAnswers" Association="Self.FK_tblQuestionAnwersAndDislike_tblQuestionAnswers">
+      <End Role="tblQuestionAnswers" EntitySet="tblQuestionAnswers" />
+      <End Role="tblQuestionAnwersAndDislike" EntitySet="tblQuestionAnwersAndDislike" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblQuestionAnwersAndDislike_tblUsers" Association="Self.FK_tblQuestionAnwersAndDislike_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblQuestionAnwersAndDislike" EntitySet="tblQuestionAnwersAndDislike" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblQuestions_tblThreads" Association="Self.FK_tblQuestions_tblThreads">
+      <End Role="tblQuestionAreaType" EntitySet="tblQuestionAreaType" />
+      <End Role="tblQuestions" EntitySet="tblQuestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblThreads_tblAreas" Association="Self.FK_tblThreads_tblAreas">
+      <End Role="tblQuestionsAreas" EntitySet="tblQuestionsAreas" />
+      <End Role="tblQuestionAreaType" EntitySet="tblQuestionAreaType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblQuestionLikeAndDislike_tblQuestions" Association="Self.FK_tblQuestionLikeAndDislike_tblQuestions">
+      <End Role="tblQuestions" EntitySet="tblQuestions" />
+      <End Role="tblQuestionLikeAndDislike" EntitySet="tblQuestionLikeAndDislike" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblQuestionLikeAndDislike_tblUsers" Association="Self.FK_tblQuestionLikeAndDislike_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblQuestionLikeAndDislike" EntitySet="tblQuestionLikeAndDislike" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tags_tblQuestions" Association="Self.FK_Tags_tblQuestions">
+      <End Role="tblQuestions" EntitySet="tblQuestions" />
+      <End Role="tblTags" EntitySet="tblTags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblQuestions_tblUsers" Association="Self.FK_tblQuestions_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblQuestions" EntitySet="tblQuestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblReferences_tblUsers" Association="Self.FK_tblReferences_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblReferences" EntitySet="tblReferences" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tags_tblShares" Association="Self.FK_Tags_tblShares">
+      <End Role="tblShares" EntitySet="tblShares" />
+      <End Role="tblTags" EntitySet="tblTags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblShares_tblUsers" Association="Self.FK_tblShares_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblShares" EntitySet="tblShares" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSharesComment_tblShares" Association="Self.FK_tblSharesComment_tblShares">
+      <End Role="tblShares" EntitySet="tblShares" />
+      <End Role="tblSharesComment" EntitySet="tblSharesComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSharesLike_tblShares" Association="Self.FK_tblSharesLike_tblShares">
+      <End Role="tblShares" EntitySet="tblShares" />
+      <End Role="tblSharesLike" EntitySet="tblSharesLike" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSharesLike_tblShares1" Association="Self.FK_tblSharesLike_tblShares1">
+      <End Role="tblShares" EntitySet="tblShares" />
+      <End Role="tblSharesLike" EntitySet="tblSharesLike" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSharesComment_tblUsers" Association="Self.FK_tblSharesComment_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblSharesComment" EntitySet="tblSharesComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSharesLike_tblUsers" Association="Self.FK_tblSharesLike_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblSharesLike" EntitySet="tblSharesLike" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSharesLike_tblUsers1" Association="Self.FK_tblSharesLike_tblUsers1">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblSharesLike" EntitySet="tblSharesLike" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSkilsDetails_tblSkills" Association="Self.FK_tblSkilsDetails_tblSkills">
+      <End Role="tblSkills" EntitySet="tblSkills" />
+      <End Role="tblSkilsDetails" EntitySet="tblSkilsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSkillsValidation_tblUsers" Association="Self.FK_tblSkillsValidation_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblSkillsValidation" EntitySet="tblSkillsValidation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSkillsValidation_tblUserSkills" Association="Self.FK_tblSkillsValidation_tblUserSkills">
+      <End Role="tblUserSkills" EntitySet="tblUserSkills" />
+      <End Role="tblSkillsValidation" EntitySet="tblSkillsValidation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserSkills_tblSkilsDetails" Association="Self.FK_tblUserSkills_tblSkilsDetails">
+      <End Role="tblSkilsDetails" EntitySet="tblSkilsDetails" />
+      <End Role="tblUserSkills" EntitySet="tblUserSkills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserLanguages_tblUsers" Association="Self.FK_tblUserLanguages_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblUserLanguages" EntitySet="tblUserLanguages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUsers_tblUserType" Association="Self.FK_tblUsers_tblUserType">
+      <End Role="tblUserType" EntitySet="tblUserType" />
+      <End Role="tblUsers" EntitySet="tblUsers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUsersCourses_tblUsers" Association="Self.FK_tblUsersCourses_tblUsers">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblUsersCourses" EntitySet="tblUsersCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUserSkills_tblUsers1" Association="Self.FK_tblUserSkills_tblUsers1">
+      <End Role="tblUsers" EntitySet="tblUsers" />
+      <End Role="tblUserSkills" EntitySet="tblUserSkills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblWorks_tblWorksPosition" Association="Self.FK_tblWorks_tblWorksPosition">
+      <End Role="tblWorksPosition" EntitySet="tblWorksPosition" />
+      <End Role="tblWorks" EntitySet="tblWorks" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

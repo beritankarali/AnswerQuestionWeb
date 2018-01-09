@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="beritank-001-site1.itempurl.com" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Sema\\Desktop\\SORU\ VE\ CEVAP\\WSQA\\WSQA\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Sema\\Desktop\\SORU\ VE\ CEVAP\\WSQA\\WSQA\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="Add write permission to App_Data Folder" description="Add write permission to App_Data folder" value="beritank-001-site1.itempurl.com/App_Data" tags="Hidden">
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Sema\\Desktop\\SORU\ VE\ CEVAP\\WSQA\\WSQA\\obj\\Release\\Package\\PackageTmp\\App_Data$" />
+  </parameter>
+  <parameter name="dbStajProjeEntities-Web.config Connection String" description="" value="metadata=res://*/Model.DataModel.dbProje.csdl|res://*/Model.DataModel.dbProje.ssdl|res://*/Model.DataModel.dbProje.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\v11.0;attachdbfilename=|DataDirectory|\stajproje.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Sema\\Desktop\\SORU\ VE\ CEVAP\\WSQA\\WSQA\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='dbStajProjeEntities']/@connectionString" />
+  </parameter>
+  <parameter name="dbProjeEntities-Web.config Connection String" description="dbProjeEntities Connection String used in web.config by the application to access the database." value="metadata=res://*/App_Data.dbWS.csdl|res://*/App_Data.dbWS.ssdl|res://*/App_Data.dbWS.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\v11.0;attachdbfilename=|DataDirectory|\stajproje.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Sema\\Desktop\\SORU\ VE\ CEVAP\\WSQA\\WSQA\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='dbProjeEntities']/@connectionString" />
+  </parameter>
+</parameters>

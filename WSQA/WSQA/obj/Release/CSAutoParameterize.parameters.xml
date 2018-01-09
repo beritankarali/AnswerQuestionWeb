@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="dbProjeEntities-Web.config Connection String" description="dbProjeEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/App_Data.dbWS.csdl|res://*/App_Data.dbWS.ssdl|res://*/App_Data.dbWS.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\v11.0;attachdbfilename=|DataDirectory|\stajproje.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Sema\\Desktop\\SORU\ VE\ CEVAP\\WSQA\\WSQA\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='dbProjeEntities']/@connectionString" />
+  </parameter>
+  <parameter name="dbStajProjeEntities-Web.config Connection String" description="dbStajProjeEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Model.DataModel.dbProje.csdl|res://*/Model.DataModel.dbProje.ssdl|res://*/Model.DataModel.dbProje.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=(LocalDB)\v11.0;attachdbfilename=|DataDirectory|\stajproje.mdf;integrated security=True;connect timeout=30;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Sema\\Desktop\\SORU\ VE\ CEVAP\\WSQA\\WSQA\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='dbStajProjeEntities']/@connectionString" />
+  </parameter>
+</parameters>

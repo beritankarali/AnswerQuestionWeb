@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAATGPiIrd+Hkyxz4L1TLYXPAAAAAACAAAAAAAQZgAAAAEAACAAAACYSW4prj66AkdXzCJRtpGlgJBceIjOmJcXoVAP0h2ElwAAAAAOgAAAAAIAACAAAAB4a5oNKYs/mXfFJ5gIoYAJEEJNPJ0b0L0CHBvyZZdWiCAAAAAFDmM4DTZqJNrT7aPAShZC4eB2Ff2yIHOLgdFT5EpBrkAAAADUACghqlUC6Z5NcUjoOvddFQIyrNUhhJRri9luh1UnyO+l78x0oXoXqih6FNrPL0l5T95vMwqEVRRkj8k+QUKe</EncryptedPassword>
+    <_PublishTargetUrl>ftp://ftp.mywindowshosting.com/service</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/stajproje.mdf">
+      <publishTime>12/15/2016 04:08:56</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>12/08/2016 21:06:28</publishTime>
+    </File>
+    <File Include="bin/WSQA.dll">
+      <publishTime>12/15/2016 03:09:16</publishTime>
+    </File>
+    <File Include="Model/DataModel/dbProje.edmx.diagram">
+      <publishTime>12/08/2016 21:13:50</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>12/08/2016 21:06:40</publishTime>
+    </File>
+    <File Include="Service1.svc">
+      <publishTime>12/08/2016 20:52:34</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>12/15/2016 03:09:22</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

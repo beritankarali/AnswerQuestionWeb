@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c3499f7cec9b4a78811358cb81e2e4b4" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.sysdiagrams" Width="2.125" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblCategory" Width="1.5" PointX="0.75" PointY="56.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblCompanies" Width="1.5" PointX="5.25" PointY="38.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblConferenceCourses" Width="1.5" PointX="5.25" PointY="42.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblCountries" Width="1.5" PointX="0.75" PointY="35.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblCourseComment" Width="1.5" PointX="5.25" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblCourseCommentStatus" Width="1.5" PointX="3" PointY="44.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblCourseKeyword" Width="1.5" PointX="6" PointY="72.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblCourseKeywords" Width="1.5" PointX="8.25" PointY="61" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblCourseLevel" Width="1.5" PointX="0.75" PointY="59.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblCourseRate" Width="1.5" PointX="8.25" PointY="49.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblCourses" Width="1.5" PointX="3" PointY="57.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblCourseStatus" Width="1.5" PointX="0.75" PointY="61.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblDepartments" Width="1.5" PointX="7.5" PointY="34.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblDisabledStatus" Width="1.5" PointX="10.5" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblDistricts" Width="1.5" PointX="5.25" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblFaculties" Width="1.5" PointX="5.75" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblFollowing" Width="1.5" PointX="5.25" PointY="52.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblFollowRequest" Width="1.5" PointX="5.25" PointY="55.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblForeignLanguages" Width="1.5" PointX="11" PointY="59" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblHobbies" Width="1.5" PointX="5.25" PointY="58.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblInterView" Width="1.5" PointX="9.75" PointY="38.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblInterViewAnswers" Width="1.5" PointX="16" PointY="44.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblJobApplications" Width="1.5" PointX="12.75" PointY="40.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblJobOperationType" Width="1.5" PointX="12.75" PointY="37.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblJobs" Width="1.5" PointX="7.5" PointY="37.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblJobsDepartment" Width="1.5" PointX="9.75" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblJobsDisabled" Width="1.5" PointX="12.75" PointY="34.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblJobsEducationLevel" Width="1.5" PointX="15.75" PointY="39.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblJobsSkils" Width="1.5" PointX="15.75" PointY="36.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblLesson" Width="1.5" PointX="5.25" PointY="68.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblMessages" Width="1.5" PointX="5.25" PointY="61" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblNotifications" Width="1.5" PointX="19" PointY="56.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblOldProject" Width="1.5" PointX="8.25" PointY="53.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblOperationType" Width="1.5" PointX="10.5" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblPersonelEducation" Width="1.5" PointX="10.25" PointY="45.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblPersonelEducationType" Width="1.5" PointX="13.5" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblProfiles" Width="1.5" PointX="11.25" PointY="49.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblProjectAds" Width="1.5" PointX="7.5" PointY="45.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblProjectApplications" Width="1.5" PointX="16.75" PointY="48.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblProvinces" Width="1.5" PointX="3" PointY="35.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblQuestionAnswers" Width="1.5" PointX="11.25" PointY="55.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblQuestionAnwersAndDislike" Width="1.5" PointX="16.5" PointY="52.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblQuestionAreaType" Width="1.5" PointX="8" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblQuestionLikeAndDislike" Width="1.5" PointX="8.25" PointY="57.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblQuestions" Width="1.5" PointX="10.25" PointY="41.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblQuestionsAreas" Width="1.5" PointX="5.75" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblReferences" Width="1.5" PointX="5.25" PointY="86.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblSections" Width="1.5" PointX="8" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblSectors" Width="1.5" PointX="5.25" PointY="45.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblShares" Width="1.5" PointX="5.25" PointY="89.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblSharesComment" Width="1.5" PointX="7.5" PointY="68.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblSharesLike" Width="1.5" PointX="10.5" PointY="69.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblSkills" Width="1.5" PointX="11.25" PointY="29.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblSkillsValidation" Width="1.5" PointX="13.25" PointY="46.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblSkilsDetails" Width="1.5" PointX="13.5" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblTags" Width="1.5" PointX="12.5" PointY="65.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblUniversities" Width="1.5" PointX="3.5" PointY="26.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblUserLanguages" Width="1.5" PointX="13.25" PointY="43.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblUsers" Width="1.5" PointX="3" PointY="46.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblUsersCourses" Width="1.5" PointX="14.25" PointY="49.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblUserSkills" Width="1.5" PointX="14.25" PointY="52.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblUserType" Width="1.5" PointX="0.75" PointY="50" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblWorks" Width="1.5" PointX="6" PointY="64.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_A151C9_beritankModel.tblWorksPosition" Width="1.5" PointX="5.25" PointY="33" IsExpanded="true" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblCategory_tblCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblCourses_tblCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblCompanies_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblJobs_tblCompanies" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblProjectAds_tblCompanies" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblProjectApplications_tblCompanies" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblConferenceCourses_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tbltblProvinces_tblCountries" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblUniversities_tblCountries" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblCourseComment_tblCourseComment" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblCourseComment_tblCourseCommentStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblCourseComment_tblCourses" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblCourseComment_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblCourseKeywords_tblCourseKeyword" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblCourseKeywords_tblCourses" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblCourses_tblCourseLevel" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblCourseRate_tblCourses" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblCourseRate_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblCourses_tblCourseStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblLesson_tblCourses" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblUsersCourses_tblCourses" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblJobsDepartment_tblDepartments" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblJobsDisabled_tblDisabledStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblProfiles_tblDisabledStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblDistricts_tbltblProvinces" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblJobs_tblDistricts" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblProfiles_tblDistricts" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblFaculties_tblUniversities" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblSections_tblFaculties" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblFollowing_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblNotifications_tblFollowing" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblFollowRequest_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblNotifications_tblFollowRequest" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblUserLanguages_tblForeignLanguages" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblHobbies_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblInterView_tblJobs" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblInterViewAnswers_tblInterView" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblInterViewAnswers_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblJobApplications_tblJobs" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblJobApplications_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblJobOperationType_tblJobs" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblJobOperationType_tblOperationType" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblJobs_tblSectors" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblJobs_tblWorksPosition" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblJobsDepartment_tblJobs" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblJobsDisabled_tblJobs" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblJobsSkils_tblJobs" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblJonsEducationLevel_tblJobs" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblJonsEducationLevel_tblEducationType" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblJobsSkils_tblSkilsDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblMessages_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblNotifications_tblProjectApplications" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblNotifications_tblQuestionAnswers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblNotifications_tblQuestionAnwersAndDislike" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblNotifications_tblQuestionLikeAndDislike" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblNotifications_tblSharesComment" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblNotifications_tblSharesLike" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblNotifications_tblSkillsValidation" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblNotifications_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblOldProject_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblOldProject_tblWorks" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblEducation_tblEducationType" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblEducation_tblSections" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblEducation_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblProfiles_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblProjectAds_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblProjectApplications_tblProjectAds" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblProjectApplications_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblAnswers_tblQuestions" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblAnswers_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblQuestionAnwersAndDislike_tblQuestionAnswers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblQuestionAnwersAndDislike_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblQuestions_tblThreads" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblThreads_tblAreas" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblQuestionLikeAndDislike_tblQuestions" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblQuestionLikeAndDislike_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_Tags_tblQuestions" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblQuestions_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblReferences_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_Tags_tblShares" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblShares_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblSharesComment_tblShares" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblSharesLike_tblShares" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblSharesLike_tblShares1" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblSharesComment_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblSharesLike_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblSharesLike_tblUsers1" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblSkilsDetails_tblSkills" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblSkillsValidation_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblSkillsValidation_tblUserSkills" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblUserSkills_tblSkilsDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblUserLanguages_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblUsers_tblUserType" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblUsersCourses_tblUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblUserSkills_tblUsers1" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_A151C9_beritankModel.FK_tblWorks_tblWorksPosition" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
